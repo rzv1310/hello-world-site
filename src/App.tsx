@@ -242,7 +242,8 @@ const Hero = () => {
             <p
               className="text-lg sm:text-lg text-white mb-0 sm:mb-8 leading-[1.8] sm:leading-relaxed mt-[70px] sm:mt-0 [text-shadow:none] sm:[text-shadow:0_0_8px_rgba(10,25,47,0.7),0_0_20px_rgba(10,25,47,0.5),0_2px_4px_rgba(10,25,47,0.8)]"
             >
-              Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
+              <span className="sm:hidden">Sprijinim companiile să își îndeplinească<br />obligațiile legale, să reducă riscurile și<br />să obțină situații financiare auditate<br />cu încredere.</span>
+              <span className="hidden sm:inline">Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.</span>
             </p>
 
             <div
