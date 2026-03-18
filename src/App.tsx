@@ -233,8 +233,7 @@ const Hero = () => {
           {/* Content */}
           <div className="flex flex-col gap-2 sm:gap-0">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.3] sm:leading-[1.1] mb-0 sm:mb-6"
-              style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.3] sm:leading-[1.1] mb-0 sm:mb-6 [text-shadow:none] sm:[text-shadow:0_0_8px_rgba(10,25,47,0.7),0_0_20px_rgba(10,25,47,0.5),0_2px_4px_rgba(10,25,47,0.8)]"
             >
               Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
