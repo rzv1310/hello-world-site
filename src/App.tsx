@@ -253,7 +253,8 @@ const Hero = () => {
             </div>
 
             <div
-              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white/70 mt-[45px] sm:mt-0"
+              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-[45px] sm:mt-0"
+              style={{ textShadow: '0 1px 3px rgba(10,25,47,0.6), 0 2px 6px rgba(10,25,47,0.4)' }}
             >
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 text-brand-navy" />
