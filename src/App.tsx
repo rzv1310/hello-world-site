@@ -221,7 +221,7 @@ const Hero = () => {
         <img src="/hero-mobil-audit-statutar.webp" alt="" className="w-full h-full object-cover md:hidden" />
         <img src="/hero-audit-statutar.webp" alt="" className="w-full h-full object-cover hidden md:block" />
         <div className="absolute inset-0 bg-brand-navy/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#4A3728]/70 to-[#4A3728]/10 md:hidden" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full -mt-[50px] sm:mt-[50px]">
