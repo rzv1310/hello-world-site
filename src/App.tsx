@@ -1144,19 +1144,19 @@ const ContactForm = () => {
             <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-2 gap-5">
                 <div>
-                  <input type="text" placeholder="Nume *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-brand-beige-dark" required />
+                  <input type="text" placeholder="Nume *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-gray-400 focus:placeholder:text-transparent" required />
                 </div>
                 <div>
-                  <input type="text" placeholder="Companie *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-brand-beige-dark" required />
+                  <input type="text" placeholder="Companie *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-gray-400 focus:placeholder:text-transparent" required />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-5">
                 <div>
-                  <input type="email" placeholder="Email *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-brand-beige-dark" required />
+                  <input type="email" placeholder="Email *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-gray-400 focus:placeholder:text-transparent" required />
                 </div>
                 <div>
-                  <input type="tel" placeholder="Telefon *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-brand-beige-dark" required />
+                  <input type="tel" placeholder="Telefon *" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-gray-400 focus:placeholder:text-transparent" required />
                 </div>
               </div>
 
