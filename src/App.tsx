@@ -1132,7 +1132,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <div className="text-sm text-white/60 mb-1">Trimite-ne un email</div>
-                  <a href="mailto:Elena.Iliuta@gmail.com" className="text-xl font-medium hover:text-brand-gold transition-colors">Elena.Iliuta@gmail.com</a>
+                  <a href="mailto:office@audit-statutar.ro" className="text-xl font-medium hover:text-brand-gold transition-colors">office@audit-statutar.ro</a>
                 </div>
               </div>
             </div>
