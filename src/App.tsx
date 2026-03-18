@@ -231,7 +231,7 @@ const Hero = () => {
         >
 
           {/* Content */}
-          <div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/15 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:p-0 sm:border-0">
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
