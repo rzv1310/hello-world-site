@@ -231,28 +231,20 @@ const Hero = () => {
         >
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-          >
+          <div>
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
-              style={{ transform: "translateZ(40px)" }}
             >
               Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
             <p
               className="text-base sm:text-lg text-brand-navy mb-8 leading-relaxed"
-              style={{ transform: "translateZ(30px)" }}
             >
               Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
             </p>
 
             <div
               className="flex flex-col sm:flex-row gap-4 mb-12 justify-start mt-10 sm:mt-0"
-              style={{ transform: "translateZ(50px)" }}
             >
               <a href="#calculator" className="inline-flex items-center justify-center whitespace-nowrap px-8 py-4 bg-brand-navy hover:bg-brand-navy-light text-white font-medium rounded transition-colors shadow-lg hover:shadow-xl w-auto sm:w-auto">
                 Verifică eligibilitatea <ArrowRight className="ml-2 w-5 h-5" />
@@ -261,7 +253,6 @@ const Hero = () => {
 
             <div
               className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white/70 mt-[45px] sm:mt-0"
-              style={{ transform: "translateZ(20px)" }}
             >
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 text-brand-navy" />
@@ -272,7 +263,7 @@ const Hero = () => {
                 <span>Certificări CAFR si ASPAAS</span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
