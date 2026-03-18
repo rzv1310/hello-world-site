@@ -231,18 +231,22 @@ const Hero = () => {
         >
 
           {/* Content */}
-          <div className="flex flex-col gap-3 sm:gap-0">
+          <div className="flex flex-col gap-2 sm:gap-0">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-0 sm:mb-6 bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0 sm:border-0"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.3] sm:leading-[1.1] mb-0 sm:mb-6"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
-              Audit statutar clar, riguros și adaptat companiei tale.
+              <span className="sm:bg-transparent bg-white/5 backdrop-blur-sm sm:backdrop-blur-none box-decoration-clone">
+                Audit statutar clar, riguros și adaptat companiei tale.
+              </span>
             </h1>
             <p
-              className="text-base sm:text-lg text-white mb-0 sm:mb-8 leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0 sm:border-0"
+              className="text-base sm:text-lg text-white mb-0 sm:mb-8 leading-[1.8] sm:leading-relaxed"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
-              Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
+              <span className="sm:bg-transparent bg-white/5 backdrop-blur-sm sm:backdrop-blur-none box-decoration-clone">
+                Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
+              </span>
             </p>
 
             <div
@@ -254,16 +258,16 @@ const Hero = () => {
             </div>
 
             <div
-              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0 bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0 sm:border-0"
+              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 text-brand-navy" />
-                <span>15+ ani expertiză audit & advisory</span>
+                <span className="sm:bg-transparent bg-white/5 backdrop-blur-sm sm:backdrop-blur-none box-decoration-clone">15+ ani expertiză audit & advisory</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-brand-navy" />
-                <span>Certificări CAFR si ASPAAS</span>
+                <span className="sm:bg-transparent bg-white/5 backdrop-blur-sm sm:backdrop-blur-none box-decoration-clone">Certificări CAFR si ASPAAS</span>
               </div>
             </div>
           </div>
