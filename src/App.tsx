@@ -240,7 +240,7 @@ const Hero = () => {
             </div>
 
             <div
-              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white/70"
+              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white/70 mt-[45px] sm:mt-0"
               style={{ transform: "translateZ(20px)" }}
             >
               <div className="flex items-center gap-2">
