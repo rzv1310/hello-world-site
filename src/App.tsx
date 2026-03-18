@@ -222,7 +222,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-brand-navy/20" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-[50px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full -mt-[30px] sm:mt-[50px]">
         <div
           className="max-w-2xl text-left"
           onMouseMove={handleMouseMove}
@@ -238,7 +238,7 @@ const Hero = () => {
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           >
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6 -mt-[65px] sm:mt-0"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
               style={{ transform: "translateZ(40px)" }}
             >
               Audit statutar clar, riguros și adaptat companiei tale.
