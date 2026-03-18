@@ -1242,12 +1242,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} Helenico Advisory. Toate drepturile rezervate.</p>
-          <div className="flex gap-6 flex-wrap">
-            <a href="#" className="hover:text-white transition-colors">Termeni și condiții</a>
-            <a href="#" className="hover:text-white transition-colors">GDPR</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+        <div className="pt-8 border-t border-white/10 flex flex-col items-center gap-4 text-xs text-white/40">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+            <p>&copy; {new Date().getFullYear()} Helenico Advisory. Toate drepturile rezervate.</p>
+            <div className="flex gap-6 flex-wrap">
+              <a href="#" className="hover:text-white transition-colors">Termeni și condiții</a>
+              <a href="#" className="hover:text-white transition-colors">GDPR</a>
+              <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            </div>
+          </div>
+          <div className="flex gap-6">
             <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ANPC-SAL</a>
             <a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ANPC-SOL</a>
           </div>
