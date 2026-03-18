@@ -1300,7 +1300,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-brand-beige selection:bg-brand-gold selection:text-white pb-[72px] md:pb-0">
+      <div className="min-h-screen bg-brand-beige selection:bg-brand-gold selection:text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
