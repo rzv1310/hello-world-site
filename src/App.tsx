@@ -238,8 +238,8 @@ const Hero = () => {
               Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
             <p
-              className="text-base sm:text-lg text-brand-navy mb-8 leading-relaxed"
-              style={{ textShadow: '0 1px 3px rgba(255,255,255,0.8), 0 2px 6px rgba(255,255,255,0.5)' }}
+              className="text-base sm:text-lg text-white mb-8 leading-relaxed"
+              style={{ textShadow: '0 1px 3px rgba(10,25,47,0.6), 0 2px 6px rgba(10,25,47,0.4)' }}
             >
               Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
             </p>
