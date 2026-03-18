@@ -222,7 +222,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-brand-navy/20" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-[50px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full -mt-[30px] sm:mt-[50px]">
         <div
           className="max-w-2xl text-left"
           onMouseMove={handleMouseMove}
