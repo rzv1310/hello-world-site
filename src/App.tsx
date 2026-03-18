@@ -260,7 +260,7 @@ const Hero = () => {
                 <span>15+ ani expertiză audit & advisory</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-brand-navy" />
+                <Users className="h-4 w-4 text-white" />
                 <span>Certificări CAFR si ASPAAS</span>
               </div>
             </div>
