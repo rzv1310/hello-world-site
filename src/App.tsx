@@ -813,7 +813,7 @@ const Process = () => {
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connecting line for desktop */}
           <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gray-200">
-            <div className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#D4AF37] shadow-[0_0_8px_2px_rgba(212,175,55,0.8)] animate-[travelDot_4s_linear_infinite]"></div>
+            <div className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#D4AF37] shadow-[0_0_8px_2px_rgba(212,175,55,0.8)] animate-[travelDot_8s_linear_infinite]"></div>
           </div>
 
           {steps.map((step, i) => (
