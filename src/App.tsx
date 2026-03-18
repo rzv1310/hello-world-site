@@ -271,7 +271,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-    <div className="h-[50px] bg-brand-beige-dark/50" />
+    <div className="h-[50px] bg-[#faf0e6]" />
     </>
   );
 };
