@@ -255,7 +255,7 @@ const Hero = () => {
             </div>
 
             <div
-              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0 [text-shadow:none] sm:[text-shadow:0_0_8px_rgba(10,25,47,0.7),0_0_20px_rgba(10,25,47,0.5),0_2px_4px_rgba(10,25,47,0.8)]"
+              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0"
             >
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 text-white" />
