@@ -239,6 +239,7 @@ const Hero = () => {
             </h1>
             <p
               className="text-base sm:text-lg text-brand-navy mb-8 leading-relaxed"
+              style={{ textShadow: '0 1px 3px rgba(255,255,255,0.8), 0 2px 6px rgba(255,255,255,0.5)' }}
             >
               Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
             </p>
