@@ -1240,8 +1240,9 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} Helenico Advisory. Toate drepturile rezervate.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Politică de confidențialitate</a>
             <a href="#" className="hover:text-white transition-colors">Termeni și condiții</a>
+            <a href="#" className="hover:text-white transition-colors">GDPR</a>
+            <a href="#" className="hover:text-white transition-colors">Cookies</a>
           </div>
         </div>
       </div>
