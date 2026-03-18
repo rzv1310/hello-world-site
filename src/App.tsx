@@ -238,7 +238,7 @@ const Hero = () => {
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           >
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6 -mt-[65px] sm:mt-0"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
               style={{ transform: "translateZ(40px)" }}
             >
               Audit statutar clar, riguros și adaptat companiei tale.
