@@ -1243,10 +1243,12 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} Helenico Advisory. Toate drepturile rezervate.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 flex-wrap">
             <a href="#" className="hover:text-white transition-colors">Termeni și condiții</a>
             <a href="#" className="hover:text-white transition-colors">GDPR</a>
             <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ANPC-SAL</a>
+            <a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ANPC-SOL</a>
           </div>
         </div>
       </div>
