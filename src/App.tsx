@@ -1111,9 +1111,9 @@ const ContactForm = () => {
 
           {/* CTA Text */}
           <div className="bg-brand-navy text-white p-10 md:p-12 rounded-2xl flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-serif mb-6">Hai să discutăm dacă firma ta are nevoie de audit statutar.</h2>
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">Hai să discutăm dacă firma ta are nevoie de audit.</h2>
             <p className="text-lg text-white/80 mb-10">
-              Într-o discuție scurtă putem clarifica obligațiile, etapele și pașii potriviți pentru compania ta. Fără obligații, doar claritate.
+              Într-o discuție scurtă putem clarifica pașii potriviți pentru compania ta. Fără obligații, doar claritate.
             </p>
 
             <div className="space-y-6">
@@ -1132,7 +1132,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <div className="text-sm text-white/60 mb-1">Trimite-ne un email</div>
-                  <a href="mailto:office@audit-statutar.ro" className="text-xl font-medium hover:text-brand-gold transition-colors">office@audit-statutar.ro</a>
+                  <a href="mailto:office@audit-statutar.ro" className="text-base md:text-xl font-medium hover:text-brand-gold transition-colors break-all">office@audit-statutar.ro</a>
                 </div>
               </div>
             </div>
