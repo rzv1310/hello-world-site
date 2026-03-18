@@ -372,7 +372,7 @@ const Criteria = () => {
   const rotateX = useTransform(scrollYProgress, [0, 1], [0, -270]);
 
   return (
-    <section id="criterii" className="bg-brand-beige pt-24">
+    <section id="criterii" className="bg-[#faf0e6] pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-6">Când are compania ta obligația de audit statutar?</h2>
@@ -581,7 +581,7 @@ const Risks = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#faf0e6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -727,7 +727,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="servicii" className="py-24 bg-brand-beige overflow-hidden">
+    <section id="servicii" className="py-24 bg-[#faf0e6] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
@@ -906,7 +906,7 @@ const RequiredDocuments = () => {
   ];
 
   return (
-    <section className="bg-brand-beige-dark/30 pt-24">
+    <section className="bg-[#faf0e6] pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-6">Documente necesare pentru auditul statutar</h2>
