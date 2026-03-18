@@ -1187,6 +1187,13 @@ const ContactForm = () => {
                 <textarea rows={3} className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all resize-none"></textarea>
               </div>
 
+              <div className="flex items-start gap-2">
+                <input type="checkbox" id="gdpr-consent" required className="mt-1 w-4 h-4 accent-brand-gold cursor-pointer" />
+                <label htmlFor="gdpr-consent" className="text-sm text-gray-600 cursor-pointer">
+                  De acord cu <a href="#gdpr" className="text-brand-gold hover:underline font-medium">Politica de confidențialitate</a>
+                </label>
+              </div>
+
               <button type="submit" className="w-full py-4 bg-brand-gold hover:bg-brand-gold-hover text-white font-medium rounded-lg transition-colors mt-2">
                 Trimite solicitarea
               </button>
