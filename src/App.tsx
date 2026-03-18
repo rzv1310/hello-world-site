@@ -221,7 +221,7 @@ const Hero = () => {
         <img src="/hero-mobil-audit-statutar.webp" alt="" className="w-full h-full object-cover md:hidden" />
         <img src="/hero-audit-statutar.webp" alt="" className="w-full h-full object-cover hidden md:block" />
         <div className="absolute inset-0 bg-brand-navy/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4A3728]/70 to-[#4A3728]/10 md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4A3728]/70 to-[#4A3728]/10" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full -mt-[50px] sm:mt-[50px]">
@@ -235,12 +235,12 @@ const Hero = () => {
           {/* Content */}
           <div className="flex flex-col gap-2 sm:gap-0">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.3] sm:leading-[1.1] mb-0 sm:mb-6 mt-[60px] sm:mt-0 [text-shadow:none] sm:[text-shadow:0_0_8px_rgba(10,25,47,0.7),0_0_20px_rgba(10,25,47,0.5),0_2px_4px_rgba(10,25,47,0.8)]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.3] sm:leading-[1.1] mb-0 sm:mb-6 mt-[60px] sm:mt-0"
             >
               Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
             <p
-              className="text-lg sm:text-lg text-white mb-0 sm:mb-8 leading-[1.8] sm:leading-relaxed mt-[70px] sm:mt-0 [text-shadow:none] sm:[text-shadow:0_0_8px_rgba(10,25,47,0.7),0_0_20px_rgba(10,25,47,0.5),0_2px_4px_rgba(10,25,47,0.8)]"
+              className="text-lg sm:text-lg text-white mb-0 sm:mb-8 leading-[1.8] sm:leading-relaxed mt-[70px] sm:mt-0"
             >
               <span className="sm:hidden">Sprijinim companiile să își îndeplinească<br />obligațiile legale, să reducă riscurile și<br />să obțină situații financiare auditate<br />cu încredere.</span>
               <span className="hidden sm:inline">Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.</span>
@@ -255,7 +255,7 @@ const Hero = () => {
             </div>
 
             <div
-              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0 [text-shadow:none] sm:[text-shadow:0_0_8px_rgba(10,25,47,0.7),0_0_20px_rgba(10,25,47,0.5),0_2px_4px_rgba(10,25,47,0.8)]"
+              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0"
             >
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 text-white" />
