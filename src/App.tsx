@@ -214,6 +214,7 @@ const Hero = () => {
   };
 
   return (
+    <>
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Hero background image */}
       <div className="absolute inset-0">
