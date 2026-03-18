@@ -32,6 +32,12 @@ export default {
         sans: ["Inter", "sans-serif"],
       },
       keyframes: {
+        travelDot: {
+          "0%": { left: "0%", opacity: "0" },
+          "5%": { opacity: "1" },
+          "95%": { opacity: "1" },
+          "100%": { left: "100%", opacity: "0" },
+        },
         marquee: {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-100%)" },
