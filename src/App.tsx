@@ -1071,7 +1071,7 @@ const FAQ = () => {
           {faqs.map((faq, i) => (
             <div key={i} className="border border-gray-200 rounded-lg overflow-hidden">
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors"
+                className="w-full px-6 py-4 text-left flex justify-between items-center bg-[#faf0e6] hover:bg-[#f5e6d5] transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
                 <span className="font-medium text-brand-navy pr-8">{faq.q}</span>
