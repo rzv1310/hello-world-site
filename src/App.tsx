@@ -234,7 +234,7 @@ const Hero = () => {
           <div>
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
-              style={{ textShadow: '0 1px 3px rgba(10,25,47,0.6), 0 2px 6px rgba(10,25,47,0.4)' }}
+              style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
               Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
