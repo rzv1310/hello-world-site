@@ -218,7 +218,7 @@ const Hero = () => {
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           >
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6 -mt-5 sm:mt-0"
               style={{ transform: "translateZ(40px)" }}
             >
               Audit statutar clar, riguros și adaptat companiei tale.
@@ -231,10 +231,10 @@ const Hero = () => {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start"
+              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start mt-10 sm:mt-0"
               style={{ transform: "translateZ(50px)" }}
             >
-              <a href="#calculator" className="inline-flex items-center justify-center px-8 py-4 bg-brand-navy hover:bg-brand-navy-light text-white font-medium rounded transition-colors shadow-lg hover:shadow-xl">
+              <a href="#calculator" className="inline-flex items-center justify-center px-8 py-4 bg-brand-navy hover:bg-brand-navy-light text-white font-medium rounded transition-colors shadow-lg hover:shadow-xl w-[60%] sm:w-auto mx-auto sm:mx-0">
                 Verifică eligibilitatea <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </div>
@@ -1286,13 +1286,6 @@ export default function App() {
         </Routes>
         <Footer />
 
-        {/* Mobile Sticky CTA */}
-        <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-gray-200 md:hidden z-50 flex justify-center shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.1)]">
-          <a href="tel:0745300600" className="w-full bg-brand-navy hover:bg-brand-navy-light text-white py-3.5 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
-            <Phone size={18} />
-            Sună acum
-          </a>
-        </div>
       </div>
     </BrowserRouter>
   );
