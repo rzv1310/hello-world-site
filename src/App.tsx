@@ -372,7 +372,7 @@ const Criteria = () => {
   const rotateX = useTransform(scrollYProgress, [0, 1], [0, -270]);
 
   return (
-    <section id="criterii" className="bg-brand-beige pt-24">
+    <section id="criterii" className="bg-[#faf0e6] pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-6">Când are compania ta obligația de audit statutar?</h2>
