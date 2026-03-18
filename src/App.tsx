@@ -802,58 +802,6 @@ const Process = () => {
     }
   ];
 
-  const gridRef = useRef<HTMLDivElement>(null);
-  const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [svgPath, setSvgPath] = useState("");
-  const [svgSize, setSvgSize] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const updatePath = () => {
-      const grid = gridRef.current;
-      if (!grid) return;
-      const gridRect = grid.getBoundingClientRect();
-      const positions: { x: number; y: number }[] = [];
-      
-      circleRefs.current.forEach((el) => {
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          positions.push({
-            x: rect.left + rect.width / 2 - gridRect.left,
-            y: rect.top + rect.height / 2 - gridRect.top
-          });
-        }
-      });
-
-      if (positions.length === 3) {
-        setSvgSize({ width: gridRect.width, height: gridRect.height });
-        
-        // Arc curves going far to the right, near the edge of the cards
-        const p1 = positions[0];
-        const p2 = positions[1];
-        const p3 = positions[2];
-        
-        // Control point X: push to nearly the right edge of the grid
-        const cx = gridRect.width - 20;
-        const midY12 = (p1.y + p2.y) / 2;
-        const midY23 = (p2.y + p3.y) / 2;
-        
-        const path = `M ${p1.x} ${p1.y} Q ${cx} ${midY12} ${p2.x} ${p2.y} Q ${cx} ${midY23} ${p3.x} ${p3.y}`;
-        setSvgPath(path);
-      }
-    };
-
-    updatePath();
-    
-    const observer = new ResizeObserver(updatePath);
-    if (gridRef.current) observer.observe(gridRef.current);
-    window.addEventListener('resize', updatePath);
-    
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', updatePath);
-    };
-  }, []);
-
   return (
     <section id="proces" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -862,50 +810,15 @@ const Process = () => {
           <p className="text-lg text-gray-600">Metodologia noastră asigură o intervenție eficientă, cu minim de perturbare a activității echipei tale financiare.</p>
         </div>
 
-        <div ref={gridRef} className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connecting line for desktop */}
           <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gray-200">
             <div className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#D4AF37] shadow-[0_0_8px_2px_rgba(212,175,55,0.8)] animate-[travelDot_8s_linear_infinite]"></div>
           </div>
 
-          {/* Mobile SVG arc with animated dot */}
-          {svgPath && (
-            <svg
-              className="block md:hidden absolute inset-0 pointer-events-none z-0"
-              width={svgSize.width}
-              height={svgSize.height}
-              style={{ overflow: 'visible' }}
-            >
-              <defs>
-                <filter id="goldGlow">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-              {/* The arc path (subtle line) */}
-              <path
-                d={svgPath}
-                fill="none"
-                stroke="rgba(212,175,55,0.15)"
-                strokeWidth="1.5"
-                strokeDasharray="6 4"
-              />
-              {/* Animated golden dot */}
-              <circle r="4" fill="#D4AF37" filter="url(#goldGlow)">
-                <animateMotion dur="8s" repeatCount="indefinite" path={svgPath} />
-              </circle>
-            </svg>
-          )}
-
           {steps.map((step, i) => (
             <div key={i} className="relative z-10">
-              <div
-                ref={(el) => { circleRefs.current[i] = el; }}
-                className="w-24 h-24 mx-auto bg-brand-beige rounded-full flex items-center justify-center border-8 border-white shadow-sm mb-6"
-              >
+              <div className="w-24 h-24 mx-auto bg-brand-beige rounded-full flex items-center justify-center border-8 border-white shadow-sm mb-6">
                 <span className="text-2xl font-serif font-bold text-brand-gold">{step.num}</span>
               </div>
               <h3 className="text-xl font-medium text-brand-navy text-center mb-6">{step.title}</h3>
