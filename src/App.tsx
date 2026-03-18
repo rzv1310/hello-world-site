@@ -242,9 +242,7 @@ const Hero = () => {
               className="text-base sm:text-lg text-white mb-0 sm:mb-8 leading-[1.8] sm:leading-relaxed"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
-              <span className="sm:bg-transparent bg-white/5 backdrop-blur-sm sm:backdrop-blur-none box-decoration-clone">
-                Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
-              </span>
+              Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
             </p>
 
             <div
