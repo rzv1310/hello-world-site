@@ -13,6 +13,8 @@ import {
   BarChart3, Scale, Calculator, Search, ShieldAlert,
   FileSpreadsheet, Landmark, FolderOpen, CheckCircle
 } from 'lucide-react';
+import aspaasLogo from '@/assets/sigla-aspaas.webp';
+import cafrLogo from '@/assets/cafr-sigla.webp';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
