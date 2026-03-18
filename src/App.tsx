@@ -1063,7 +1063,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-24 bg-brand-beige-dark/30">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-12 text-center">Întrebări frecvente despre auditul statutar</h2>
 
