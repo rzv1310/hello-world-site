@@ -119,24 +119,38 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
             className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
             <div className="px-4 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <div key={link.name} className="border-b border-gray-50">
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3, delay: index * 0.06, ease: "easeOut" }}
+                  className="border-b border-gray-50"
+                >
                   {link.dropdown ? (
                     <div className="py-2">
                       <div className="text-base font-medium text-gray-800 mb-2">{link.name}</div>
                       <div className="pl-4 flex flex-col gap-2 border-l-2 border-brand-gold/20 ml-2">
-                        {link.dropdown.map(dropLink => (
-                          <Link
+                        {link.dropdown.map((dropLink, di) => (
+                          <motion.div
                             key={dropLink.name}
-                            to={dropLink.href}
-                            className="text-sm text-gray-600 py-1"
-                            onClick={() => setMobileMenuOpen(false)}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.25, delay: (index * 0.06) + (di * 0.04) + 0.1 }}
                           >
-                            {dropLink.name}
-                          </Link>
+                            <Link
+                              to={dropLink.href}
+                              className="block text-sm text-gray-600 py-1 hover:text-brand-gold transition-colors"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {dropLink.name}
+                            </Link>
+                          </motion.div>
                         ))}
                       </div>
                     </div>
@@ -149,15 +163,21 @@ const Navbar = () => {
                       {link.name}
                     </Link>
                   )}
-                </div>
+                </motion.div>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 inline-flex items-center justify-center px-6 py-3 bg-transparent border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-base font-medium rounded"
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: navLinks.length * 0.06 + 0.1 }}
               >
-                Programează o discuție
-              </Link>
+                <Link
+                  to="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mt-4 inline-flex items-center justify-center px-6 py-3 bg-transparent border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-base font-medium rounded transition-colors"
+                >
+                  Programează o discuție
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}
