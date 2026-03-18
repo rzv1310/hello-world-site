@@ -99,7 +99,7 @@ const Navbar = () => {
 
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-sm font-medium rounded transition-colors">
+            <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-[#faf0e6] border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-sm font-medium rounded transition-colors">
               Programează o discuție
             </Link>
             <button
