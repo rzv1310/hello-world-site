@@ -595,7 +595,7 @@ const Risks = () => {
             </Link>
           </div>
 
-          <div className="bg-brand-beige-dark/50 p-8 md:p-10 rounded-2xl">
+          <div className="bg-white p-8 md:p-10 rounded-2xl">
             <ul className="space-y-6">
               {risks.map((risk, i) => (
                 <li key={i} className="flex items-start gap-4">
