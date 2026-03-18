@@ -645,9 +645,9 @@ const About = () => {
               <p className="text-lg text-gray-600 mb-8">
                 Suntem membri ai principalelor organisme profesionale din România, garantând respectarea celor mai înalte standarde de etică și calitate în audit și consultanță.
               </p>
-              <div className="flex gap-4">
-                <div className="bg-brand-beige px-6 py-3 rounded-lg border border-brand-gold/20 font-medium tracking-wider text-brand-navy">ASPAAS</div>
-                <div className="bg-brand-beige px-6 py-3 rounded-lg border border-brand-gold/20 font-medium tracking-wider text-brand-navy">CAFR</div>
+              <div className="flex gap-4 items-center">
+                <img src={aspaasLogo} alt="ASPAAS" className="h-16 w-auto object-contain" />
+                <img src={cafrLogo} alt="CAFR" className="h-16 w-auto object-contain" />
               </div>
             </div>
 
