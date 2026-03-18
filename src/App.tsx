@@ -240,7 +240,7 @@ const Hero = () => {
             </h1>
             <p
               className="text-base sm:text-lg text-white mb-8 leading-relaxed"
-              style={{ textShadow: '0 1px 3px rgba(10,25,47,0.6), 0 2px 6px rgba(10,25,47,0.4)' }}
+              style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
               Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
             </p>
