@@ -231,10 +231,10 @@ const Hero = () => {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start"
+              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start mt-10 sm:mt-0"
               style={{ transform: "translateZ(50px)" }}
             >
-              <a href="#calculator" className="inline-flex items-center justify-center px-8 py-4 bg-brand-navy hover:bg-brand-navy-light text-white font-medium rounded transition-colors shadow-lg hover:shadow-xl">
+              <a href="#calculator" className="inline-flex items-center justify-center px-8 py-4 bg-brand-navy hover:bg-brand-navy-light text-white font-medium rounded transition-colors shadow-lg hover:shadow-xl w-[60%] sm:w-auto mx-auto sm:mx-0">
                 Verifică eligibilitatea <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </div>
