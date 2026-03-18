@@ -1286,13 +1286,6 @@ export default function App() {
         </Routes>
         <Footer />
 
-        {/* Mobile Sticky CTA */}
-        <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-gray-200 md:hidden z-50 flex justify-center shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.1)]">
-          <a href="tel:0745300600" className="w-full bg-brand-navy hover:bg-brand-navy-light text-white py-3.5 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
-            <Phone size={18} />
-            Sună acum
-          </a>
-        </div>
       </div>
     </BrowserRouter>
   );
