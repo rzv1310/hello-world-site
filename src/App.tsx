@@ -231,22 +231,22 @@ const Hero = () => {
         >
 
           {/* Content */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:p-0 sm:border-0">
+          <div className="flex flex-col gap-3 sm:gap-0">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-0 sm:mb-6 bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0 sm:border-0"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
               Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
             <p
-              className="text-base sm:text-lg text-white mb-8 leading-relaxed"
+              className="text-base sm:text-lg text-white mb-0 sm:mb-8 leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0 sm:border-0"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
               Sprijinim companiile să își îndeplinească obligațiile legale, să reducă riscurile și să obțină situații financiare auditate cu încredere.
             </p>
 
             <div
-              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start items-start mt-10 sm:mt-0"
+              className="flex flex-col sm:flex-row gap-4 mb-0 sm:mb-12 justify-start items-start mt-3 sm:mt-0"
             >
               <a href="#calculator" className="inline-flex items-center justify-center whitespace-nowrap px-4 py-2 sm:px-8 sm:py-4 bg-brand-navy hover:bg-brand-navy-light text-white text-base sm:text-lg font-medium rounded transition-colors shadow-lg hover:shadow-xl w-auto">
                 Verifică eligibilitatea <ArrowRight className="ml-2 w-5 h-5" />
@@ -254,7 +254,7 @@ const Hero = () => {
             </div>
 
             <div
-              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-[45px] sm:mt-0"
+              className="flex flex-wrap items-center justify-start gap-x-8 gap-y-4 text-sm font-medium text-white mt-3 sm:mt-0 bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0 sm:border-0"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
               <div className="flex items-center gap-2">
