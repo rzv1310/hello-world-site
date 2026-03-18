@@ -99,7 +99,7 @@ const Navbar = () => {
 
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-sm font-medium rounded transition-colors">
+            <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-[#faf0e6] border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-sm font-medium rounded transition-colors">
               Programează o discuție
             </Link>
             <button
@@ -1220,9 +1220,8 @@ const Footer = () => {
           <div>
             <h4 className="font-medium mb-6 text-lg">Linkuri utile</h4>
             <ul className="space-y-3 text-sm text-white/60">
-              <li><Link to="/despre-noi" className="hover:text-brand-gold transition-colors">Despre noi</Link></li>
-              <li><Link to="/servicii/audit-statutar" className="hover:text-brand-gold transition-colors">Servicii</Link></li>
-              <li><a href="/#criterii" className="hover:text-brand-gold transition-colors">Criterii audit</a></li>
+              <li><Link to="/despre-noi" className="hover:text-brand-gold transition-colors">Despre Noi</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-gold transition-colors">Contact</Link></li>
               <li><a href="/#faq" className="hover:text-brand-gold transition-colors">Întrebări frecvente</a></li>
             </ul>
           </div>
