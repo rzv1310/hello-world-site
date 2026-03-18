@@ -1220,9 +1220,8 @@ const Footer = () => {
           <div>
             <h4 className="font-medium mb-6 text-lg">Linkuri utile</h4>
             <ul className="space-y-3 text-sm text-white/60">
-              <li><Link to="/despre-noi" className="hover:text-brand-gold transition-colors">Despre noi</Link></li>
-              <li><Link to="/servicii/audit-statutar" className="hover:text-brand-gold transition-colors">Servicii</Link></li>
-              <li><a href="/#criterii" className="hover:text-brand-gold transition-colors">Criterii audit</a></li>
+              <li><Link to="/despre-noi" className="hover:text-brand-gold transition-colors">Despre Noi</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-gold transition-colors">Contact</Link></li>
               <li><a href="/#faq" className="hover:text-brand-gold transition-colors">Întrebări frecvente</a></li>
             </ul>
           </div>
