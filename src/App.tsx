@@ -236,9 +236,7 @@ const Hero = () => {
               className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.3] sm:leading-[1.1] mb-0 sm:mb-6"
               style={{ textShadow: '0 0 8px rgba(10,25,47,0.7), 0 0 20px rgba(10,25,47,0.5), 0 2px 4px rgba(10,25,47,0.8)' }}
             >
-              <span className="sm:bg-transparent bg-white/5 backdrop-blur-sm sm:backdrop-blur-none box-decoration-clone">
-                Audit statutar clar, riguros și adaptat companiei tale.
-              </span>
+              Audit statutar clar, riguros și adaptat companiei tale.
             </h1>
             <p
               className="text-base sm:text-lg text-white mb-0 sm:mb-8 leading-[1.8] sm:leading-relaxed"
