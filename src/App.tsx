@@ -297,7 +297,7 @@ const TrustStrip = () => {
   const duplicatedItems3 = [...items3, ...items3, ...items3, ...items3, ...items3, ...items3];
 
   return (
-    <div className="relative overflow-hidden h-[calc(26.8vw+220px)] bg-white flex items-center justify-center">
+    <div className="relative overflow-hidden h-[calc(26.8vw+220px)] bg-[#FDFBF7] flex items-center justify-center">
       <div className="absolute w-[150vw] flex flex-col transform -rotate-[15deg]">
         <div className="bg-brand-navy py-6 overflow-hidden flex">
           <div className="flex animate-marquee whitespace-nowrap">
