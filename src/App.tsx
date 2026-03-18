@@ -244,7 +244,7 @@ const Hero = () => {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start mt-10 sm:mt-0"
+              className="flex flex-col sm:flex-row gap-4 mb-12 justify-start items-start mt-10 sm:mt-0"
             >
               <a href="#calculator" className="inline-flex items-center justify-center whitespace-nowrap px-4 py-2 sm:px-8 sm:py-4 bg-white/10 backdrop-blur-md border border-white/20 sm:bg-brand-navy sm:backdrop-blur-none sm:border-0 hover:bg-white/20 sm:hover:bg-brand-navy-light text-white text-sm sm:text-base font-medium rounded transition-colors shadow-lg hover:shadow-xl w-auto">
                 Verifică eligibilitatea <ArrowRight className="ml-2 w-5 h-5" />
