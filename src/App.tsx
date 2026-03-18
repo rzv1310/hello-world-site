@@ -827,18 +827,15 @@ const Process = () => {
       if (positions.length === 3) {
         setSvgSize({ width: gridRect.width, height: gridRect.height });
         
-        // Arc curves going to the right side of the cards
-        const arcOffsetX = 60; // how far right the arc bulges
-        
+        // Arc curves going far to the right, near the edge of the cards
         const p1 = positions[0];
         const p2 = positions[1];
         const p3 = positions[2];
         
-        // Quadratic bezier from circle 1 to circle 2, arcing right
-        // Then from circle 2 to circle 3, arcing right
+        // Control point X: push to nearly the right edge of the grid
+        const cx = gridRect.width - 20;
         const midY12 = (p1.y + p2.y) / 2;
         const midY23 = (p2.y + p3.y) / 2;
-        const cx = p1.x + arcOffsetX;
         
         const path = `M ${p1.x} ${p1.y} Q ${cx} ${midY12} ${p2.x} ${p2.y} Q ${cx} ${midY23} ${p3.x} ${p3.y}`;
         setSvgPath(path);
