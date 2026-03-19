@@ -1,9 +1,9 @@
 import { trustStripItems, trustStripItems2, trustStripItems3 } from '@/data/audit';
 
 const TrustStrip = () => {
-  const duplicatedItems = [...trustStripItems, ...trustStripItems, ...trustStripItems, ...trustStripItems, ...trustStripItems, ...trustStripItems];
-  const duplicatedItems2 = [...trustStripItems2, ...trustStripItems2, ...trustStripItems2, ...trustStripItems2, ...trustStripItems2, ...trustStripItems2];
-  const duplicatedItems3 = [...trustStripItems3, ...trustStripItems3, ...trustStripItems3, ...trustStripItems3, ...trustStripItems3, ...trustStripItems3];
+  const duplicatedItems = [...trustStripItems, ...trustStripItems, ...trustStripItems];
+  const duplicatedItems2 = [...trustStripItems2, ...trustStripItems2, ...trustStripItems2];
+  const duplicatedItems3 = [...trustStripItems3, ...trustStripItems3, ...trustStripItems3];
 
   return (
     <div className="relative overflow-hidden h-[calc(26.8vw+220px)] bg-[#faf0e6] flex items-center justify-center">

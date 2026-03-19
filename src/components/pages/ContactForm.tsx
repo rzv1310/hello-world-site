@@ -142,7 +142,7 @@ const ContactForm = () => {
             <h3 className="text-2xl font-serif text-brand-navy mb-6">Solicită o discuție inițială</h3>
 
             {submitted ? (
-              <div className="text-center py-12">
+              <div className="text-center py-12" aria-live="polite">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Check className="h-8 w-8 text-green-600" />
                 </div>
@@ -168,10 +168,11 @@ const ContactForm = () => {
                 <div className="grid grid-cols-2 gap-5">
                   <div>
                     <div className="h-6 mb-1">
-                      {values.name && <label className="text-sm text-gray-500">Nume</label>}
+                      {values.name && <label htmlFor="name" className="text-sm text-gray-500">Nume</label>}
                     </div>
                     <input
                       type="text"
+                      id="name"
                       name="name"
                       placeholder="Nume *"
                       className={inputClass('name')}
@@ -187,10 +188,11 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <div className="h-6 mb-1">
-                      {values.company && <label className="text-sm text-gray-500">Companie</label>}
+                      {values.company && <label htmlFor="company" className="text-sm text-gray-500">Companie</label>}
                     </div>
                     <input
                       type="text"
+                      id="company"
                       name="company"
                       placeholder="Companie *"
                       className={inputClass('company')}
@@ -209,10 +211,11 @@ const ContactForm = () => {
                 <div className="grid grid-cols-2 gap-5">
                   <div>
                     <div className="h-6 mb-1">
-                      {values.email && <label className="text-sm text-gray-500">Email</label>}
+                      {values.email && <label htmlFor="email" className="text-sm text-gray-500">Email</label>}
                     </div>
                     <input
                       type="email"
+                      id="email"
                       name="email"
                       placeholder="Email *"
                       className={inputClass('email')}
@@ -228,10 +231,11 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <div className="h-6 mb-1">
-                      {values.phone && <label className="text-sm text-gray-500">Telefon</label>}
+                      {values.phone && <label htmlFor="phone" className="text-sm text-gray-500">Telefon</label>}
                     </div>
                     <input
                       type="tel"
+                      id="phone"
                       inputMode="numeric"
                       name="phone"
                       pattern="[0-9+\s]*"
@@ -289,9 +293,11 @@ const ContactForm = () => {
                   </label>
                 </div>
 
-                {error && (
-                  <p className="text-red-600 text-sm">A apărut o eroare. Vă rugăm încercați din nou.</p>
-                )}
+                <div aria-live="polite">
+                  {error && (
+                    <p className="text-red-600 text-sm">A apărut o eroare. Vă rugăm încercați din nou.</p>
+                  )}
+                </div>
 
                 <button
                   type="submit"

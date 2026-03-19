@@ -26,14 +26,14 @@ const Services = () => {
             <button
               onClick={() => scroll('left')}
               className="w-12 h-12 rounded-full border border-brand-navy/20 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-colors focus:outline-none"
-              aria-label="Previous services"
+              aria-label="Servicii anterioare"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => scroll('right')}
               className="w-12 h-12 rounded-full border border-brand-navy/20 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-colors focus:outline-none"
-              aria-label="Next services"
+              aria-label="Servicii următoare"
             >
               <ChevronRight size={24} />
             </button>

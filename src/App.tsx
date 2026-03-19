@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import ConsentNotice from '@/components/layout/ConsentNotice';
 import ErrorBoundary from '@/components/common/ErrorBoundary';
 import Home from '@/components/pages/Home';
 import { legalPagesByPath } from '@/data/legal';
@@ -26,7 +27,7 @@ const Loading = () => (
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <div className="min-h-screen bg-brand-beige selection:bg-brand-gold selection:text-white">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-navy focus:text-white focus:rounded focus:text-sm focus:font-medium">Salt la conținut</a>
@@ -40,6 +41,7 @@ export default function App() {
               <Route path="/termeni-si-conditii" element={<LegalPage {...legalPagesByPath['/termeni-si-conditii']} />} />
               <Route path="/gdpr" element={<LegalPage {...legalPagesByPath['/gdpr']} />} />
               <Route path="/cookies" element={<LegalPage {...legalPagesByPath['/cookies']} />} />
+              {/* Audit Statutar intentionally uses the simpler ServicePage layout, not DetailedServicePage. */}
               <Route path="/servicii/audit-statutar" element={<ServicePage title="Audit statutar" desc="Verificarea situațiilor financiare și asigurarea conformității legale conform standardelor. Un proces riguros și transparent, adaptat specificului companiei tale." icon={Scale} />} />
               <Route path="/servicii/audit-financiar" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/audit-financiar']} />} />
               <Route path="/servicii/due-diligence" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/due-diligence']} />} />
@@ -51,6 +53,7 @@ export default function App() {
         </ErrorBoundary>
         <Footer />
         <WhatsAppButton />
+        <ConsentNotice />
       </div>
     </BrowserRouter>
   );

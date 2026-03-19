@@ -21,6 +21,7 @@ const FAQ = () => {
               <button
                 className="w-full px-6 py-4 text-left flex justify-between items-center bg-[#faf0e6] hover:bg-[#f5e6d5] transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
               >
                 <span className="font-medium text-brand-navy pr-8">{faq.q}</span>
                 <ChevronDown className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
