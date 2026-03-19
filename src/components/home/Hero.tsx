@@ -4,7 +4,6 @@ import ScrollVideoHero from '@/components/home/ScrollVideoHero';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 const MOBILE_QUERY = '(max-width: 767px)';
-const MOBILE_FRAME_COUNT = 126;
 
 const HeroContent = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full -mt-[50px] sm:mt-[50px]">
@@ -66,7 +65,7 @@ const Hero = () => {
     <>
       {useMobileScrollHero ? (
         <ScrollVideoHero
-          frameCount={MOBILE_FRAME_COUNT}
+          videoSrc="/hero-scroll.mp4"
           fallbackSrc="/hero-mobil-audit-statutar.webp"
           fallbackAlt="Birou de audit financiar profesional"
           className="md:hidden"

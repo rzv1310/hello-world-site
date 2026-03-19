@@ -1,25 +1,17 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 
 interface ScrollVideoHeroProps {
-  frameCount: number;
-  framePrefix?: string;
+  videoSrc: string;
   heightVh?: number;
-  preloadAhead?: number;
   fallbackSrc: string;
   fallbackAlt: string;
   className?: string;
   children?: ReactNode;
 }
 
-function getFrameSrc(prefix: string, index: number): string {
-  return `${prefix}${String(index).padStart(4, '0')}.webp`;
-}
-
 export default function ScrollVideoHero({
-  frameCount,
-  framePrefix = '/frames/frame_',
+  videoSrc,
   heightVh = 300,
-  preloadAhead = 10,
   fallbackSrc,
   fallbackAlt,
   className = '',
@@ -28,14 +20,12 @@ export default function ScrollVideoHero({
   const sectionRef = useRef<HTMLElement | null>(null);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const framesRef = useRef<(HTMLImageElement | null)[]>([]);
-  const framePromisesRef = useRef<(Promise<HTMLImageElement> | null)[]>([]);
-  const currentFrameRef = useRef(-1);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const rafRef = useRef<number>(0);
-  const [isFirstFrameReady, setIsFirstFrameReady] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const drawFrame = useCallback((frame: HTMLImageElement) => {
+  const drawFrame = useCallback((source: HTMLVideoElement) => {
     const canvas = canvasRef.current;
     const viewport = viewportRef.current;
     if (!canvas || !viewport) return;
@@ -59,7 +49,7 @@ export default function ScrollVideoHero({
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, width, height);
 
-    const frameAspect = frame.naturalWidth / frame.naturalHeight;
+    const frameAspect = source.videoWidth / source.videoHeight;
     const viewportAspect = width / height;
 
     let drawWidth = width;
@@ -77,119 +67,73 @@ export default function ScrollVideoHero({
       y = (height - drawHeight) / 2;
     }
 
-    ctx.drawImage(frame, x, y, drawWidth, drawHeight);
+    ctx.drawImage(source, x, y, drawWidth, drawHeight);
   }, []);
 
-  const loadFrame = useCallback((index: number): Promise<HTMLImageElement> => {
-    const cachedFrame = framesRef.current[index];
-    if (cachedFrame) {
-      return Promise.resolve(cachedFrame);
-    }
-
-    const pending = framePromisesRef.current[index];
-    if (pending) {
-      return pending;
-    }
-
-    const promise = new Promise<HTMLImageElement>((resolve, reject) => {
-      const img = new Image();
-
-      img.onload = () => {
-        framesRef.current[index] = img;
-        framePromisesRef.current[index] = null;
-        resolve(img);
-      };
-
-      img.onerror = () => {
-        framePromisesRef.current[index] = null;
-        reject(new Error(`Failed to load frame ${index + 1}`));
-      };
-
-      img.src = getFrameSrc(framePrefix, index + 1);
-    });
-
-    framePromisesRef.current[index] = promise;
-    return promise;
-  }, [framePrefix]);
-
+  // Initialize video element
   useEffect(() => {
-    framesRef.current = new Array(frameCount).fill(null);
-    framePromisesRef.current = new Array(frameCount).fill(null);
-    currentFrameRef.current = -1;
-    setIsFirstFrameReady(false);
-    setHasError(false);
+    const video = document.createElement('video');
+    video.playsInline = true;
+    video.muted = true;
+    video.preload = 'auto';
+    video.src = videoSrc;
+    videoRef.current = video;
 
-    let cancelled = false;
-
-    void loadFrame(0)
-      .then((frame) => {
-        if (cancelled) return;
-        drawFrame(frame);
-        currentFrameRef.current = 0;
-        setIsFirstFrameReady(true);
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setHasError(true);
-        }
-      });
-
-    return () => {
-      cancelled = true;
+    const onLoadedData = () => {
+      // iOS needs a tiny seek to render the first frame
+      video.currentTime = 0.001;
     };
-  }, [drawFrame, frameCount, loadFrame]);
 
-  useEffect(() => {
-    if (!isFirstFrameReady) return;
-
-    let cancelled = false;
-    const batchSize = 4;
-
-    async function preloadFrames() {
-      for (let start = 1; start < frameCount; start += batchSize) {
-        if (cancelled) return;
-
-        const batch: Promise<unknown>[] = [];
-        for (let index = start; index < Math.min(start + batchSize, frameCount); index++) {
-          batch.push(loadFrame(index).catch(() => null));
-        }
-
-        await Promise.all(batch);
-      }
-    }
-
-    void preloadFrames();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [frameCount, isFirstFrameReady, loadFrame]);
-
-  useEffect(() => {
-    if (!isFirstFrameReady) return;
-
-    const redrawCurrentFrame = () => {
-      const frameIndex = currentFrameRef.current >= 0 ? currentFrameRef.current : 0;
-      const frame = framesRef.current[frameIndex] ?? framesRef.current[0];
-      if (frame) {
-        drawFrame(frame);
+    const onSeeked = () => {
+      drawFrame(video);
+      if (!isReady) {
+        setIsReady(true);
       }
     };
 
-    redrawCurrentFrame();
-    window.addEventListener('resize', redrawCurrentFrame);
+    const onError = () => {
+      setHasError(true);
+    };
+
+    video.addEventListener('loadeddata', onLoadedData);
+    video.addEventListener('seeked', onSeeked);
+    video.addEventListener('error', onError);
 
     return () => {
-      window.removeEventListener('resize', redrawCurrentFrame);
+      video.removeEventListener('loadeddata', onLoadedData);
+      video.removeEventListener('seeked', onSeeked);
+      video.removeEventListener('error', onError);
+      video.src = '';
+      videoRef.current = null;
     };
-  }, [drawFrame, isFirstFrameReady]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videoSrc, drawFrame]);
 
+  // Resize handler
   useEffect(() => {
-    if (!isFirstFrameReady || hasError) return;
+    if (!isReady) return;
+
+    const redraw = () => {
+      const video = videoRef.current;
+      if (video) {
+        drawFrame(video);
+      }
+    };
+
+    window.addEventListener('resize', redraw);
+    return () => {
+      window.removeEventListener('resize', redraw);
+    };
+  }, [drawFrame, isReady]);
+
+  // Scroll-driven seeking
+  useEffect(() => {
+    if (!isReady || hasError) return;
 
     const tick = () => {
       const section = sectionRef.current;
-      if (!section) {
+      const video = videoRef.current;
+      if (!section || !video) {
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
@@ -201,32 +145,10 @@ export default function ScrollVideoHero({
       if (scrollableDistance > 0) {
         const scrolled = -rect.top;
         const progress = Math.min(1, Math.max(0, scrolled / scrollableDistance));
-        const targetFrame = Math.min(
-          frameCount - 1,
-          Math.round(progress * (frameCount - 1)),
-        );
+        const targetTime = progress * video.duration;
 
-        const targetImage = framesRef.current[targetFrame];
-        if (targetImage && targetFrame !== currentFrameRef.current) {
-          drawFrame(targetImage);
-          currentFrameRef.current = targetFrame;
-        }
-
-        if (!targetImage) {
-          void loadFrame(targetFrame).catch(() => null);
-        }
-
-        for (let index = 1; index <= preloadAhead; index++) {
-          const ahead = targetFrame + index;
-          const behind = targetFrame - index;
-
-          if (ahead < frameCount && !framesRef.current[ahead]) {
-            void loadFrame(ahead).catch(() => null);
-          }
-
-          if (behind >= 0 && !framesRef.current[behind]) {
-            void loadFrame(behind).catch(() => null);
-          }
+        if (Math.abs(video.currentTime - targetTime) > 0.01) {
+          video.currentTime = targetTime;
         }
       }
 
@@ -238,7 +160,7 @@ export default function ScrollVideoHero({
     return () => {
       cancelAnimationFrame(rafRef.current);
     };
-  }, [drawFrame, frameCount, hasError, isFirstFrameReady, loadFrame, preloadAhead]);
+  }, [hasError, isReady]);
 
   const effectiveHeightVh = hasError ? 100 : heightVh;
 
@@ -257,14 +179,14 @@ export default function ScrollVideoHero({
             src={fallbackSrc}
             alt={fallbackAlt}
             className={`h-full w-full object-cover transition-opacity duration-300 ${
-              isFirstFrameReady && !hasError ? 'opacity-0' : 'opacity-100'
+              isReady && !hasError ? 'opacity-0' : 'opacity-100'
             }`}
           />
           <canvas
             ref={canvasRef}
             aria-hidden="true"
             className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
-              isFirstFrameReady && !hasError ? 'opacity-100' : 'opacity-0'
+              isReady && !hasError ? 'opacity-100' : 'opacity-0'
             }`}
           />
         </div>
