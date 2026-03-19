@@ -29,9 +29,7 @@ const Navbar = () => {
   const isLinkActive = (href: string) => currentPath === normalizePath(href);
   const isServicesActive = currentPath.startsWith('/servicii');
   const transition = prefersReducedMotion ? { duration: 0 } : undefined;
-  const contactCtaClass = isLinkActive('/contact')
-    ? 'bg-brand-navy text-white border-brand-navy'
-    : 'bg-[#faf0e6] text-brand-navy border-brand-navy hover:bg-brand-navy hover:text-white';
+  const contactCtaClass = 'bg-[#faf0e6] text-brand-navy border-brand-navy hover:bg-brand-navy hover:text-white';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm py-3' : 'py-5'}`}>
@@ -112,14 +110,17 @@ const Navbar = () => {
           <div className="flex items-center gap-4 md:justify-self-end">
             <Link
               to="/contact"
-              aria-current={isLinkActive('/contact') ? 'page' : undefined}
-              className={`hidden md:inline-flex items-center justify-center px-6 py-2.5 border text-sm font-medium rounded transition-colors ${contactCtaClass}`}
+              aria-hidden={isLinkActive('/contact') || undefined}
+              tabIndex={isLinkActive('/contact') ? -1 : undefined}
+              className={`hidden md:inline-flex items-center justify-center px-6 py-2.5 border text-sm font-medium rounded transition-colors ${contactCtaClass} ${isLinkActive('/contact') ? 'invisible' : ''}`}
             >
               Programează o discuție
             </Link>
             <button
               className="md:hidden text-brand-navy p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-label="Meniu de navigare"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -194,24 +195,21 @@ const Navbar = () => {
                   </motion.div>
                 );
               })}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.3, delay: navLinks.length * 0.06 + 0.1 }}
-              >
-                <Link
-                  to="/contact"
-                  aria-current={isLinkActive('/contact') ? 'page' : undefined}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`mt-4 inline-flex items-center justify-center px-6 py-3 border text-base font-medium rounded transition-colors ${
-                    isLinkActive('/contact')
-                      ? 'bg-brand-navy text-white border-brand-navy'
-                      : 'bg-transparent border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white'
-                  }`}
+              {!isLinkActive('/contact') && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.3, delay: navLinks.length * 0.06 + 0.1 }}
                 >
-                  Programează o discuție
-                </Link>
-              </motion.div>
+                  <Link
+                    to="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="mt-4 inline-flex items-center justify-center px-6 py-3 border text-base font-medium rounded transition-colors bg-transparent border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+                  >
+                    Programează o discuție
+                  </Link>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         )}

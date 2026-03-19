@@ -6,7 +6,7 @@ import SEO from '@/components/common/SEO';
 
 const About = () => {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main" className="min-h-screen bg-white">
       <SEO
         title="Despre noi"
         description="Helenico Advisory — firmă boutique de audit financiar și consultanță. Membri CAFR și ASPAAS. Expertiză solidă, abordare personalizată."
@@ -40,8 +40,8 @@ const About = () => {
                 Suntem membri ai principalelor organisme profesionale din România, garantând respectarea celor mai înalte standarde de etică și calitate în audit și consultanță.
               </p>
               <div className="flex gap-4 items-center">
-                <img src={aspaasLogo} alt="Autoritatea pentru Supravegherea Publică a Activității de Audit Statutar (ASPAAS)" className="h-16 w-auto object-contain" />
-                <img src={cafrLogo} alt="Camera Auditorilor Financiari din România (CAFR)" className="h-16 w-auto object-contain" />
+                <img src={aspaasLogo} alt="Autoritatea pentru Supravegherea Publică a Activității de Audit Statutar (ASPAAS)" className="h-16 w-auto object-contain" loading="lazy" />
+                <img src={cafrLogo} alt="Camera Auditorilor Financiari din România (CAFR)" className="h-16 w-auto object-contain" loading="lazy" />
               </div>
             </div>
 

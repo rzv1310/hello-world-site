@@ -3,7 +3,7 @@ const WhatsAppButton = () => (
     href="https://wa.me/40745300600"
     target="_blank"
     rel="noopener noreferrer"
-    className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-navy hover:bg-brand-navy-light rounded-full flex items-center justify-center shadow-lg transition-colors"
+    className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-navy hover:bg-brand-navy-light rounded-full flex items-center justify-center shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2"
     aria-label="WhatsApp"
     title="Scrie-ne pe WhatsApp"
   >

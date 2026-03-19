@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import ErrorBoundary from '@/components/common/ErrorBoundary';
 import Home from '@/components/pages/Home';
 import { legalPagesByPath } from '@/data/legal';
 import { detailedServicePagesByPath } from '@/data/serviceDetails';
@@ -15,6 +16,7 @@ const ContactForm = React.lazy(() => import('@/components/pages/ContactForm'));
 const ServicePage = React.lazy(() => import('@/components/pages/ServicePage'));
 const DetailedServicePage = React.lazy(() => import('@/components/pages/DetailedServicePage'));
 const LegalPage = React.lazy(() => import('@/components/pages/LegalPage'));
+const NotFound = React.lazy(() => import('@/components/pages/NotFound'));
 
 const Loading = () => (
   <div className="min-h-screen flex items-center justify-center bg-brand-beige">
@@ -27,22 +29,26 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen bg-brand-beige selection:bg-brand-gold selection:text-white">
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-navy focus:text-white focus:rounded focus:text-sm focus:font-medium">Salt la conținut</a>
         <Navbar />
-        <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/despre-noi" element={<About />} />
-            <Route path="/contact" element={<ContactForm />} />
-            <Route path="/termeni-si-conditii" element={<LegalPage {...legalPagesByPath['/termeni-si-conditii']} />} />
-            <Route path="/gdpr" element={<LegalPage {...legalPagesByPath['/gdpr']} />} />
-            <Route path="/cookies" element={<LegalPage {...legalPagesByPath['/cookies']} />} />
-            <Route path="/servicii/audit-statutar" element={<ServicePage title="Audit statutar" desc="Verificarea situațiilor financiare și asigurarea conformității legale conform standardelor. Un proces riguros și transparent, adaptat specificului companiei tale." icon={Scale} />} />
-            <Route path="/servicii/audit-financiar" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/audit-financiar']} />} />
-            <Route path="/servicii/due-diligence" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/due-diligence']} />} />
-            <Route path="/servicii/consultanta-financiara" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/consultanta-financiara']} />} />
-            <Route path="/servicii/risk-compliance" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/risk-compliance']} />} />
-          </Routes>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/despre-noi" element={<About />} />
+              <Route path="/contact" element={<ContactForm />} />
+              <Route path="/termeni-si-conditii" element={<LegalPage {...legalPagesByPath['/termeni-si-conditii']} />} />
+              <Route path="/gdpr" element={<LegalPage {...legalPagesByPath['/gdpr']} />} />
+              <Route path="/cookies" element={<LegalPage {...legalPagesByPath['/cookies']} />} />
+              <Route path="/servicii/audit-statutar" element={<ServicePage title="Audit statutar" desc="Verificarea situațiilor financiare și asigurarea conformității legale conform standardelor. Un proces riguros și transparent, adaptat specificului companiei tale." icon={Scale} />} />
+              <Route path="/servicii/audit-financiar" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/audit-financiar']} />} />
+              <Route path="/servicii/due-diligence" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/due-diligence']} />} />
+              <Route path="/servicii/consultanta-financiara" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/consultanta-financiara']} />} />
+              <Route path="/servicii/risk-compliance" element={<DetailedServicePage {...detailedServicePagesByPath['/servicii/risk-compliance']} />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
         <Footer />
         <WhatsAppButton />
       </div>

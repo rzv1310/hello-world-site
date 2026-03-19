@@ -54,7 +54,7 @@ const LegalPage = ({ title, shortTitle, path, description, intro, sections }: Le
   const relatedPages = legalPages.filter((page) => page.path !== path);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main" className="min-h-screen bg-white">
       <SEO
         title={title}
         description={description}

@@ -14,7 +14,7 @@ import Urgency from '@/components/home/Urgency';
 import FAQ from '@/components/home/FAQ';
 
 const Home = () => (
-  <main>
+  <main id="main">
     <SEO
       title="Helenico Advisory | Audit Statutar & Financiar"
       description="Servicii de audit statutar și financiar pentru companii. Expertiză solidă, abordare personalizată și conformitate legală."

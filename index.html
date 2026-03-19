@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Helenico Advisory | Audit Statutar &amp; Financiar</title>
     <meta name="description" content="Servicii de audit statutar și financiar pentru companii. Expertiză solidă, abordare personalizată și conformitate legală.">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -10,7 +12,6 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="canonical" href="https://audit-statutar.ro/" />
     <meta property="og:title" content="Helenico Advisory | Audit Statutar &amp; Financiar">
     <meta name="twitter:title" content="Helenico Advisory | Audit Statutar &amp; Financiar">
     <meta property="og:description" content="Servicii de audit statutar și financiar pentru companii. Expertiză solidă, abordare personalizată și conformitate legală.">
@@ -25,7 +26,7 @@
 </head>
   <body>
     <!-- Hidden form for Netlify build-time detection (JS-rendered forms require this) -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden aria-hidden="true">
       <input name="bot-field" />
       <input name="name" />
       <input name="company" />
@@ -36,6 +37,7 @@
       <input name="gdpr-consent" />
     </form>
 
+    <noscript><p style="text-align:center;padding:2rem">Acest site necesită JavaScript pentru a funcționa.</p></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

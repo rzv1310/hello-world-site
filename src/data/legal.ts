@@ -82,7 +82,7 @@ export const legalPages: LegalPageContent[] = [
         title: 'Drepturile dumneavoastră',
         paragraphs: [
           'În condițiile prevăzute de GDPR, puteți solicita informare, acces, rectificare, ștergere, restricționare, portabilitate sau vă puteți opune anumitor prelucrări.',
-          'Dacă apreciați că drepturile dumneavoastră nu au fost respectate, puteți formula o plângere la autoritatea competentă de supraveghere în domeniul protecției datelor.',
+          'Dacă apreciați că drepturile dumneavoastră nu au fost respectate, puteți formula o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP) — www.dataprotection.ro.',
         ],
         items: [
           'dreptul la informare',

@@ -33,6 +33,15 @@ const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<TouchedFields>({});
+  const [values, setValues] = useState({ name: '', company: '', email: '', phone: '' });
+  const [gdprChecked, setGdprChecked] = useState(false);
+
+  const isFormValid =
+    values.name.length >= 2 &&
+    values.company.length >= 2 &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email) &&
+    (() => { const d = values.phone.replace(/\D/g, ''); return d.length >= 7 && d.length <= 15; })() &&
+    gdprChecked;
 
   const validateField = (name: keyof typeof validators, value: string) => {
     const err = validators[name](value);
@@ -43,6 +52,12 @@ const ContactForm = () => {
   const handleBlur = (name: keyof typeof validators) => (e: React.FocusEvent<HTMLInputElement>) => {
     setTouched(prev => ({ ...prev, [name]: true }));
     validateField(name, e.target.value);
+  };
+
+  const handleChange = (name: keyof typeof validators) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setValues(prev => ({ ...prev, [name]: val }));
+    if (touched[name]) validateField(name, val);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -82,15 +97,16 @@ const ContactForm = () => {
   };
 
   const inputClass = (field: keyof FormErrors) =>
-    `w-full px-4 py-2.5 rounded-lg border ${touched[field] && errors[field] ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-gray-400 focus:placeholder:text-transparent`;
+    `w-full px-4 py-2.5 rounded-lg border ${touched[field] && errors[field] ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all placeholder:text-gray-400 placeholder:text-sm focus:placeholder:text-transparent`;
 
   return (
-    <section id="contact" className="py-24 pt-32 lg:pt-40 bg-brand-beige min-h-screen">
+    <main id="main" className="py-24 pt-32 lg:pt-40 bg-brand-beige min-h-screen">
       <SEO
         title="Contact"
         description="Contactează Helenico Advisory pentru servicii de audit statutar și financiar. Programează o discuție inițială gratuită."
         path="/contact"
       />
+      <h1 className="sr-only">Contact — Helenico Advisory</h1>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
 
@@ -151,42 +167,69 @@ const ContactForm = () => {
 
                 <div className="grid grid-cols-2 gap-5">
                   <div>
+                    <div className="h-6 mb-1">
+                      {values.name && <label className="text-sm text-gray-500">Nume</label>}
+                    </div>
                     <input
                       type="text"
                       name="name"
                       placeholder="Nume *"
                       className={inputClass('name')}
+                      onChange={handleChange('name')}
                       onBlur={handleBlur('name')}
                       required
+                      aria-invalid={touched.name && !!errors.name}
+                      aria-describedby={touched.name && errors.name ? 'name-error' : undefined}
                     />
-                    {touched.name && errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+                    <div className="h-6 mt-1">
+                      {touched.name && errors.name && <p id="name-error" className="text-xs text-red-600">{errors.name}</p>}
+                    </div>
                   </div>
                   <div>
+                    <div className="h-6 mb-1">
+                      {values.company && <label className="text-sm text-gray-500">Companie</label>}
+                    </div>
                     <input
                       type="text"
                       name="company"
                       placeholder="Companie *"
                       className={inputClass('company')}
+                      onChange={handleChange('company')}
                       onBlur={handleBlur('company')}
                       required
+                      aria-invalid={touched.company && !!errors.company}
+                      aria-describedby={touched.company && errors.company ? 'company-error' : undefined}
                     />
-                    {touched.company && errors.company && <p className="mt-1 text-sm text-red-600">{errors.company}</p>}
+                    <div className="h-6 mt-1">
+                      {touched.company && errors.company && <p id="company-error" className="text-xs text-red-600">{errors.company}</p>}
+                    </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-5">
                   <div>
+                    <div className="h-6 mb-1">
+                      {values.email && <label className="text-sm text-gray-500">Email</label>}
+                    </div>
                     <input
                       type="email"
                       name="email"
                       placeholder="Email *"
                       className={inputClass('email')}
+                      onChange={handleChange('email')}
                       onBlur={handleBlur('email')}
                       required
+                      aria-invalid={touched.email && !!errors.email}
+                      aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
                     />
-                    {touched.email && errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+                    <div className="h-6 mt-1">
+                      {touched.email && errors.email && <p id="email-error" className="text-xs text-red-600">{errors.email}</p>}
+                    </div>
                   </div>
                   <div>
+                    <div className="h-6 mb-1">
+                      {values.phone && <label className="text-sm text-gray-500">Telefon</label>}
+                    </div>
                     <input
                       type="tel"
                       inputMode="numeric"
@@ -194,18 +237,23 @@ const ContactForm = () => {
                       pattern="[0-9+\s]*"
                       placeholder="Telefon *"
                       className={inputClass('phone')}
+                      onChange={handleChange('phone')}
                       onBlur={handleBlur('phone')}
                       required
+                      aria-invalid={touched.phone && !!errors.phone}
+                      aria-describedby={touched.phone && errors.phone ? 'phone-error' : undefined}
                       onKeyDown={(e) => {
                         if (!/[0-9+\s]/.test(e.key) && !['Backspace','Delete','Tab','ArrowLeft','ArrowRight','Home','End'].includes(e.key) && !e.ctrlKey && !e.metaKey) e.preventDefault();
                       }}
                     />
-                    {touched.phone && errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+                    <div className="h-6 mt-1">
+                      {touched.phone && errors.phone && <p id="phone-error" className="text-xs text-red-600">{errors.phone}</p>}
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">Cum te putem ajuta?</label>
+                <fieldset>
+                  <legend className="block text-sm font-medium text-gray-700 mb-3">Cum te putem ajuta?</legend>
                   <div className="space-y-2">
                     <label className="flex items-center gap-3 cursor-pointer">
                       <input type="radio" name="intent" value="Cred că firma mea intră în criteriile de audit" className="w-4 h-4 text-brand-gold focus:ring-brand-gold border-gray-300" defaultChecked />
@@ -220,16 +268,23 @@ const ContactForm = () => {
                       <span className="text-sm text-gray-600">Vreau doar o discuție introductivă</span>
                     </label>
                   </div>
-                </div>
+                </fieldset>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Mesaj (opțional)</label>
                   <textarea name="message" rows={3} className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-all resize-none"></textarea>
                 </div>
 
-                <div className="flex items-start gap-2">
-                  <input type="checkbox" name="gdpr-consent" id="gdpr-consent" required className="mt-1 w-4 h-4 accent-brand-gold cursor-pointer" />
-                  <label htmlFor="gdpr-consent" className="text-sm text-gray-600 cursor-pointer">
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" name="gdpr-consent" id="gdpr-consent" required className="hidden" checked={gdprChecked} onChange={(e) => setGdprChecked(e.target.checked)} />
+                  <button type="button" onClick={() => setGdprChecked(!gdprChecked)} className={`mt-0.5 w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${gdprChecked ? 'bg-brand-gold border-brand-gold' : 'border-gray-300 bg-white'}`} aria-label="Consimțământ GDPR">
+                    {gdprChecked && (
+                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </button>
+                  <label onClick={() => setGdprChecked(!gdprChecked)} className="text-sm text-gray-600 cursor-pointer">
                     De acord cu <Link to="/gdpr" className="text-brand-gold hover:underline font-medium">Politica de confidențialitate</Link>
                   </label>
                 </div>
@@ -240,8 +295,8 @@ const ContactForm = () => {
 
                 <button
                   type="submit"
-                  disabled={submitting}
-                  className="w-full py-4 bg-brand-gold hover:bg-brand-gold-hover text-white font-medium rounded-lg transition-colors mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  disabled={submitting || !isFormValid}
+                  className="w-full py-4 bg-brand-gold hover:enabled:bg-brand-gold-hover text-white font-medium rounded-lg transition-colors mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Se trimite...' : 'Trimite solicitarea'}
                 </button>
@@ -251,7 +306,7 @@ const ContactForm = () => {
 
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

@@ -6,7 +6,7 @@ import { ServiceSchema } from '@/components/common/StructuredData';
 const ServicePage = ({ title, desc, icon: Icon }: ServicePageProps) => {
   const { pathname } = useLocation();
   return (
-  <main className="pt-32 pb-24 min-h-screen bg-brand-beige flex items-center">
+  <main id="main" className="pt-32 pb-24 min-h-screen bg-brand-beige flex items-center">
     <SEO title={title} description={desc} path={pathname} />
     <ServiceSchema name={title} description={desc} path={pathname} />
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">

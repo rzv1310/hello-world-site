@@ -20,7 +20,7 @@ const DetailedServicePage = ({
   const relatedPages = detailedServicePages.filter((page) => page.path !== path);
 
   return (
-    <main className="min-h-screen bg-brand-beige">
+    <main id="main" className="min-h-screen bg-brand-beige">
       <SEO title={title} description={desc} path={path} />
       <ServiceSchema name={title} description={desc} path={path} />
 
