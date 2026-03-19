@@ -37,3 +37,27 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-marquee-bottom {
+    animation: none !important;
+  }
+
+  .travel-dot {
+    animation: none !important;
+    display: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

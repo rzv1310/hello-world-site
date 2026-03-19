@@ -1,0 +1,8 @@
+{
+  "frameCount": 126,
+  "fps": 25,
+  "duration": 5.041667,
+  "width": 1280,
+  "pattern": "/frames/frame_%04d.webp",
+  "firstFrame": 1
+}

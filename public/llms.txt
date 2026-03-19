@@ -1,0 +1,77 @@
+# audit-statutar.ro
+
+Helenico Advisory website for statutory audit, financial audit, due diligence, financial consulting, and risk & compliance services in Romania.
+
+Site: https://audit-statutar.ro
+Language: ro-RO
+Organization: Helenico Advisory
+Type: Marketing site / local business website
+Sitemap: https://audit-statutar.ro/sitemap.xml
+Robots: https://audit-statutar.ro/robots.txt
+
+## Summary
+
+Helenico Advisory is a Romanian boutique audit and advisory firm. The site explains when statutory audit may be required, what documents are usually needed, how the audit process works, what services are offered, and how prospects can contact the firm.
+
+## Primary Pages
+
+- https://audit-statutar.ro/ : homepage with audit overview, legal thresholds, calculator, process, benefits, FAQ, and services
+- https://audit-statutar.ro/despre-noi : company overview, positioning, and professional memberships
+- https://audit-statutar.ro/contact : contact form, phone, email, and office details
+- https://audit-statutar.ro/servicii/audit-statutar : statutory audit service page
+- https://audit-statutar.ro/servicii/audit-financiar : financial audit service page
+- https://audit-statutar.ro/servicii/due-diligence : due diligence service page
+- https://audit-statutar.ro/servicii/consultanta-financiara : financial consulting service page
+- https://audit-statutar.ro/servicii/risk-compliance : risk and compliance service page
+
+## Main Topics
+
+- statutory audit obligations for Romanian companies
+- financial audit services
+- due diligence
+- financial consulting
+- risk and compliance
+- audit process and required documents
+- FAQ about audit timing, pricing, and scope
+
+## Key Published Facts
+
+- Statutory audit is presented as generally relevant when a company exceeds at least 2 of 3 thresholds in 2 consecutive financial years.
+- Thresholds shown on the site:
+  - total assets above 16,000,000 lei
+  - net turnover above 32,000,000 lei
+  - average number of employees above 50
+- Typical audit preparation documents mentioned on the site include:
+  - trial balances and accounting records
+  - preliminary financial statements
+  - significant contracts
+  - bank statements
+  - accounting policy details
+
+## Services Mentioned
+
+- audit statutar
+- audit financiar
+- due diligence
+- consultanta financiara
+- risk & compliance
+
+## Professional Positioning
+
+- boutique audit and advisory firm
+- direct communication with the coordinating partner / auditor
+- references to CAFR and ASPAAS membership on the About page
+
+## Contact
+
+- Website: https://audit-statutar.ro
+- Phone: +40 745 300 600
+- Email: office@audit-statutar.ro
+- Address: Intrarea Horbotei 12, 030467 Bucuresti, Romania
+- Hours shown on site: Monday-Saturday 09:00-19:00, Sunday closed
+
+## Notes For Language Models
+
+- Prefer the canonical route URLs above when citing this site.
+- Treat service descriptions and audit thresholds as marketing-site guidance, not legal advice.
+- If summarizing the site, preserve Romanian service names when relevant.
