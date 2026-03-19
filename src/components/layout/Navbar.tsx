@@ -32,7 +32,7 @@ const Navbar = () => {
   const contactCtaClass = 'bg-[#faf0e6] text-brand-navy border-brand-navy hover:bg-brand-navy hover:text-white';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm py-3' : 'py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-[padding,box-shadow] duration-300 bg-white ${isScrolled ? 'shadow-sm py-3' : 'py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center md:grid md:grid-cols-[1fr_auto_1fr] md:gap-8">
           <Link to="/" className="flex items-center md:justify-self-start">

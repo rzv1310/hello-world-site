@@ -178,14 +178,15 @@ export default function ScrollVideoHero({
           <img
             src={fallbackSrc}
             alt={fallbackAlt}
-            className={`h-full w-full object-cover transition-opacity duration-300 ${
+            fetchPriority="high"
+            className={`h-full w-full object-cover ${
               isReady && !hasError ? 'opacity-0' : 'opacity-100'
             }`}
           />
           <canvas
             ref={canvasRef}
             aria-hidden="true"
-            className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
+            className={`absolute inset-0 h-full w-full ${
               isReady && !hasError ? 'opacity-100' : 'opacity-0'
             }`}
           />

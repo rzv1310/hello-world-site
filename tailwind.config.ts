@@ -28,8 +28,8 @@ export default {
         "brand-beige-dark": "#F2EFE9",
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        sans: ["Inter", "sans-serif"],
+        serif: ["Playfair Display Variable", "Playfair Display", "serif"],
+        sans: ["Inter Variable", "Inter", "sans-serif"],
       },
       keyframes: {
         travelDot: {
