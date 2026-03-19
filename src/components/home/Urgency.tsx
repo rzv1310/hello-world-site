@@ -10,7 +10,7 @@ const Urgency = () => {
             <p className="text-brand-navy/80">Documentele și informațiile puse la dispoziție la timp ajută la desfășurarea eficientă a misiunii, iar întârzierile pot genera efort și costuri suplimentare.</p>
           </div>
           <Link to="/contact" className="shrink-0 px-8 py-4 bg-brand-navy hover:bg-brand-navy-light text-white font-medium rounded transition-colors">
-            Rezervă o discuție inițială
+            Programează o discuție inițială
           </Link>
         </div>
       </div>
