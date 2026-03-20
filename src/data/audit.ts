@@ -48,7 +48,7 @@ export const processSteps: ProcessStep[] = [
 export const benefits: string[] = [
   "Raport transparent pentru acționari",
   "Încredere sporită pentru autorități și parteneri externi",
-  "Imagine profesională consolidată",
+  "Fără haos administrativ, doar structură, ritm și coordonare",
   "Vizibilitate mai bună asupra riscurilor financiare",
   "Fundament mai bun pentru decizii de management"
 ];
