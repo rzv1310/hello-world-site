@@ -9,7 +9,7 @@ const Benefits = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-serif mb-6">Mai mult decât o obligație legală: un plus de credibilitate</h2>
             <p className="text-lg text-white/80 mb-8">
-              Obții liniște totală și claritate cu un audit statutar complet în 21 de zile, realizat conform standardelor ISA și cerințelor legale în vigoare.
+              Obții liniște totală și claritate cu un audit statutar complet în 21 de zile, realizat conform standardelor ISA și legislației în vigoare.
             </p>
           </div>
           <div className="grid gap-4">
