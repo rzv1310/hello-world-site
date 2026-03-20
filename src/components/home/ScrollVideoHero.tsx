@@ -23,7 +23,10 @@ export default function ScrollVideoHero({
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoContainerRef = useRef<HTMLDivElement | null>(null);
   const rafRef = useRef<number>(0);
+  const isSeekingRef = useRef(false);
+  const readyTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const [isReady, setIsReady] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -78,15 +81,54 @@ export default function ScrollVideoHero({
     video.playsInline = true;
     video.muted = true;
     video.preload = 'auto';
-    video.src = videoSrc;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('muted', '');
+    video.setAttribute('preload', 'auto');
     videoRef.current = video;
 
+    // Attach to DOM (hidden) — iOS Safari requires video in the document tree
+    Object.assign(video.style, {
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      opacity: '0',
+      pointerEvents: 'none',
+    });
+    videoContainerRef.current?.appendChild(video);
+
+    // Set src after DOM attachment and force iOS to begin loading
+    video.src = videoSrc;
+    video.load();
+
+    const onLoadedMetadata = () => {
+      // iOS: ensure duration is available, then trigger first frame
+      if (video.readyState >= 1) {
+        video.currentTime = 0.001;
+      }
+    };
+
     const onLoadedData = () => {
-      // iOS needs a tiny seek to render the first frame
-      video.currentTime = 0.001;
+      // iOS: play/pause cycle to initialize the decoder, then seek
+      if (video.readyState >= 2) {
+        video.play().then(() => {
+          video.pause();
+          video.currentTime = 0.001;
+        }).catch(() => {
+          // Fallback: try seeking directly
+          video.currentTime = 0.001;
+        });
+      }
+
+      // Timeout fallback: if seeked never fires within 3s, force ready
+      readyTimeoutRef.current = setTimeout(() => {
+        if (!isReady) {
+          setIsReady(true);
+        }
+      }, 3000);
     };
 
     const onSeeked = () => {
+      isSeekingRef.current = false;
       drawFrame(video);
       if (!isReady) {
         setIsReady(true);
@@ -94,18 +136,23 @@ export default function ScrollVideoHero({
     };
 
     const onError = () => {
+      console.warn('[ScrollVideoHero] Video error:', video.error?.message, video.error?.code);
       setHasError(true);
     };
 
+    video.addEventListener('loadedmetadata', onLoadedMetadata);
     video.addEventListener('loadeddata', onLoadedData);
     video.addEventListener('seeked', onSeeked);
     video.addEventListener('error', onError);
 
     return () => {
+      video.removeEventListener('loadedmetadata', onLoadedMetadata);
       video.removeEventListener('loadeddata', onLoadedData);
       video.removeEventListener('seeked', onSeeked);
       video.removeEventListener('error', onError);
+      clearTimeout(readyTimeoutRef.current);
       video.src = '';
+      video.parentElement?.removeChild(video);
       videoRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -141,15 +188,21 @@ export default function ScrollVideoHero({
       }
 
       const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
       const scrollableDistance = rect.height - viewportHeight;
 
       if (scrollableDistance > 0) {
+        if (!video.duration || !isFinite(video.duration)) {
+          rafRef.current = requestAnimationFrame(tick);
+          return;
+        }
+
         const scrolled = -rect.top;
         const progress = Math.min(1, Math.max(0, scrolled / scrollableDistance));
         const targetTime = progress * video.duration;
 
-        if (Math.abs(video.currentTime - targetTime) > 0.01) {
+        if (!isSeekingRef.current && Math.abs(video.currentTime - targetTime) > 0.01) {
+          isSeekingRef.current = true;
           video.currentTime = targetTime;
         }
       }
@@ -172,9 +225,11 @@ export default function ScrollVideoHero({
       className={className}
       style={{ height: `${effectiveHeightVh}vh`, position: 'relative' }}
     >
+      <div ref={videoContainerRef} aria-hidden="true" />
       <div
         ref={viewportRef}
-        className="sticky top-0 h-screen w-full overflow-hidden"
+        className="sticky top-0 w-full overflow-hidden"
+        style={{ height: '100dvh' }}
       >
         <div className="absolute inset-0">
           <img

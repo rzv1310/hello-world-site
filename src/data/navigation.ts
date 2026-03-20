@@ -6,7 +6,6 @@ export const navLinks: NavLink[] = [
     name: 'Servicii',
     href: '#',
     dropdown: [
-      { name: 'Audit statutar', href: '/' },
       { name: 'Audit financiar', href: '/servicii/audit-financiar' },
       { name: 'Due diligence', href: '/servicii/due-diligence' },
       { name: 'Consultanță financiară', href: '/servicii/consultanta-financiara' },
