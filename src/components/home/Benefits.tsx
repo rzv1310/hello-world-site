@@ -23,7 +23,7 @@ const Benefits = () => {
           </div>
         </div>
         <div className="mt-12 text-center">
-          <Link to="/contact" className="inline-block bg-brand-gold text-brand-navy font-semibold px-8 py-4 rounded-lg hover:bg-brand-gold/90 transition-colors text-lg">
+          <Link to="/contact" className="inline-block bg-white text-brand-navy font-semibold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors text-lg">
             Solicită o conversație fără obligații înainte să iei o decizie
           </Link>
         </div>
