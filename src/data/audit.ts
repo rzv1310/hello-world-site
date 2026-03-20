@@ -49,7 +49,7 @@ export const benefits: string[] = [
   "Raport transparent pentru acționari",
   "Încredere sporită pentru autorități și parteneri externi",
   "Fără haos administrativ, doar structură, ritm și coordonare",
-  "Vizibilitate mai bună asupra riscurilor financiare",
+  "Mergi înainte cu mai multă încredere și fără riscuri financiare / neconformități",
   "Mai puțin stres, mai mult control și fără să blochezi activitatea companiei"
 ];
 
