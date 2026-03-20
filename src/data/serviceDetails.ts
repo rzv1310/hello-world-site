@@ -5,7 +5,7 @@ export const detailedServicePages: ServiceDetailPageContent[] = [
   {
     path: '/servicii/audit-financiar',
     title: 'Audit financiar',
-    desc: 'Audit statutar și voluntar conform standardelor locale și internaționale aplicabile. Creștem credibilitatea financiară a companiei în fața investitorilor și partenerilor.',
+    desc: 'Audit voluntar conform standardelor locale și internaționale aplicabile. Creștem credibilitatea financiară a companiei în fața investitorilor și partenerilor.',
     icon: FileText,
     eyebrow: 'Audit financiar',
     intro: 'Auditul financiar devine esențial atunci când compania are nevoie de situații financiare credibile, de confort pentru acționari sau de un dialog mai solid cu băncile, investitorii și partenerii comerciali. Intervenim cu o abordare riguroasă, dar pragmatică, astfel încât auditul să ofere claritate și nu doar conformitate formală.',

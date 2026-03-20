@@ -55,7 +55,7 @@ const Criteria = () => {
           </div>
           <div className="mt-12 bg-brand-navy text-white p-8 rounded-2xl shadow-xl border border-brand-navy flex flex-col items-center justify-center text-center max-w-lg mx-auto">
             <AlertTriangle className="h-12 w-12 text-brand-gold mb-4" />
-            <h4 className="text-xl md:text-2xl font-serif mb-4">Atenție la praguri</h4>
+            <h3 className="text-xl md:text-2xl font-serif mb-4">Atenție la praguri</h3>
             <p className="text-white/80 mb-6 text-sm md:text-base">Dacă îndeplinești cel puțin 2 din 3 criterii în două exerciții financiare consecutive, este foarte probabil să ai obligația de audit statutar.</p>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white bg-transparent hover:bg-white/10 text-white text-sm font-medium rounded transition-colors group">
               Asigură-te că ești în legalitate
@@ -68,7 +68,7 @@ const Criteria = () => {
   }
 
   return (
-    <section id="criterii" className="bg-[#faf0e6] pt-24">
+    <section id="criterii" className="relative bg-[#faf0e6] pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-6">Când are compania ta obligația de audit statutar?</h2>
@@ -130,7 +130,7 @@ const Criteria = () => {
                 style={{ transform: "rotateX(270deg) translateZ(160px)", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
               >
                 <AlertTriangle className="h-12 w-12 text-brand-gold mb-4" />
-                <h4 className="text-xl md:text-2xl font-serif mb-4">Atenție la praguri</h4>
+                <h3 className="text-xl md:text-2xl font-serif mb-4">Atenție la praguri</h3>
                 <p className="text-white/80 mb-6 text-sm md:text-base">Dacă îndeplinești cel puțin 2 din 3 criterii în două exerciții financiare consecutive, este foarte probabil să ai obligația de audit statutar.</p>
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white bg-transparent hover:bg-white/10 text-white text-sm font-medium rounded transition-colors group">
                   Asigură-te că ești în legalitate

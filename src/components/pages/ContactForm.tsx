@@ -106,14 +106,13 @@ const ContactForm = () => {
         description="Contactează Helenico Advisory pentru servicii de audit statutar și financiar. Programează o discuție inițială gratuită."
         path="/contact"
       />
-      <h1 className="sr-only">Contact — Helenico Advisory</h1>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
 
           <div className="bg-brand-navy text-white p-10 md:p-12 rounded-2xl flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-serif mb-6">Hai să discutăm dacă firma ta are nevoie de audit.</h2>
+            <h1 className="text-3xl md:text-4xl font-serif mb-6">Hai să discutăm dacă firma ta are nevoie de audit.</h1>
             <p className="text-lg text-white/80 mb-10">
-              Într-o discuție scurtă putem clarifica pașii potriviți pentru compania ta. Fără obligații, doar claritate.
+              Într-un call scurt putem clarifica pașii potriviți pentru compania ta. Fără obligații, doar claritate.
             </p>
 
             <div className="space-y-6">
@@ -139,7 +138,7 @@ const ContactForm = () => {
           </div>
 
           <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-serif text-brand-navy mb-6">Solicită o discuție inițială</h3>
+            <h2 className="text-2xl font-serif text-brand-navy mb-6">Solicită o discuție inițială</h2>
 
             {submitted ? (
               <div className="text-center py-12" aria-live="polite">

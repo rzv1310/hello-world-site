@@ -5,6 +5,7 @@ interface ScrollVideoHeroProps {
   heightVh?: number;
   fallbackSrc: string;
   fallbackAlt: string;
+  fallbackTitle?: string;
   className?: string;
   children?: ReactNode;
 }
@@ -14,6 +15,7 @@ export default function ScrollVideoHero({
   heightVh = 300,
   fallbackSrc,
   fallbackAlt,
+  fallbackTitle,
   className = '',
   children,
 }: ScrollVideoHeroProps) {
@@ -178,7 +180,8 @@ export default function ScrollVideoHero({
           <img
             src={fallbackSrc}
             alt={fallbackAlt}
-            fetchPriority="high"
+            title={fallbackTitle}
+            fetchpriority="high"
             className={`h-full w-full object-cover ${
               isReady && !hasError ? 'opacity-0' : 'opacity-100'
             }`}

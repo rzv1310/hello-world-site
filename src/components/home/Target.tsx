@@ -6,9 +6,9 @@ const Target = () => {
   return (
     <section className="py-24 bg-[#faf0e6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-12 max-w-3xl mx-auto">
+        <h3 className="text-3xl md:text-4xl font-serif text-brand-navy mb-12 max-w-3xl mx-auto">
           Lucrăm cel mai bine cu firme care au nevoie de claritate, conformitate și comunicare eficientă
-        </h2>
+        </h3>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {targetCards.map((card, i) => (

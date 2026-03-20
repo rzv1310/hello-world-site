@@ -163,8 +163,7 @@ const DetailedServicePage = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[0.8fr,1.2fr] gap-12 items-start">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-brand-navy/60">Navigare internă</p>
-              <h2 className="mt-4 text-3xl md:text-4xl font-serif text-brand-navy">Explorează și celelalte servicii</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-brand-navy">Explorează și celelalte servicii</h2>
               <p className="mt-4 text-lg text-gray-600 leading-relaxed">
                 Fiecare dintre aceste pagini are conținut propriu și un unghi diferit. Dacă ești în faza de evaluare, merită să le compari înainte de a programa o discuție.
               </p>

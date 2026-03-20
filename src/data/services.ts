@@ -6,12 +6,12 @@ export const services: Service[] = [
     title: "Audit statutar",
     desc: "Verificarea situațiilor financiare și asigurarea conformității legale conform standardelor.",
     icon: Scale,
-    href: "/servicii/audit-statutar",
+    href: "/",
     highlight: true
   },
   {
     title: "Audit financiar",
-    desc: "Audit statutar și voluntar conform standardelor locale și internaționale aplicabile.",
+    desc: "Audit voluntar conform standardelor locale și internaționale aplicabile.",
     icon: FileText,
     href: "/servicii/audit-financiar",
     highlight: false

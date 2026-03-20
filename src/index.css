@@ -40,11 +40,14 @@
 
 @layer base {
   html {
+    /* Motion useScroll({ target }) measures against the scrolling root. */
+    position: relative;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
   }
 
   body {
+    position: relative;
     font-family: 'Inter Variable', 'Inter', sans-serif;
     background-color: #FDFBF7;
     color: #1f2937;

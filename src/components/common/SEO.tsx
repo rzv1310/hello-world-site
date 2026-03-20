@@ -21,7 +21,10 @@ const SEO = ({ title, description, path, noindex }: SEOProps) => {
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+      <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large'} />
+      <meta name="author" content="HELENICO ADVISORY | AUDIT STATUTAR" />
+      <meta name="publisher" content="HELENICO ADVISORY" />
+      <meta name="keywords" content="audit statutar" />
       <link rel="canonical" href={canonical} />
       <link rel="alternate" hrefLang="ro" href={canonical} />
       <link rel="alternate" hrefLang="x-default" href={canonical} />

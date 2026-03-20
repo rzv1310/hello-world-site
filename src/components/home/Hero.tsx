@@ -68,6 +68,7 @@ const Hero = () => {
           videoSrc="/hero-scroll.mp4"
           fallbackSrc="/hero-mobil-audit-statutar.webp"
           fallbackAlt="Birou de audit financiar profesional"
+          fallbackTitle="Birou Helenico Advisory"
           className="md:hidden"
         >
           <div className="absolute inset-0 bg-brand-navy/20" />
@@ -79,8 +80,8 @@ const Hero = () => {
       ) : (
         <section className="relative min-h-screen flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src="/hero-mobil-audit-statutar.webp" alt="Birou de audit financiar profesional" fetchPriority="high" className="w-full h-full object-cover md:hidden" />
-            <img src="/hero-audit-statutar.webp" alt="Echipa Helenico Advisory în ședință de audit statutar" fetchPriority="high" className="w-full h-full object-cover hidden md:block" />
+            <img src="/hero-mobil-audit-statutar.webp" alt="Birou de audit financiar profesional" title="Birou Helenico Advisory" {...{ fetchpriority: "high" }} className="w-full h-full object-cover md:hidden" />
+            <img src="/hero-audit-statutar.webp" alt="Echipa Helenico Advisory în ședință de audit statutar" title="birou audit statutar" {...{ fetchpriority: "high" }} className="w-full h-full object-cover hidden md:block" />
             <div className="absolute inset-0 bg-brand-navy/20" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#4A3728]/70 to-[#4A3728]/10" />
           </div>

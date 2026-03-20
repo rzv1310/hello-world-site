@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center md:grid md:grid-cols-[1fr_auto_1fr] md:gap-8">
           <Link to="/" className="flex items-center md:justify-self-start">
-            <img src="/logo-helenico-advisory.webp" alt="Helenico Advisory" className="h-16 -my-3 w-auto" />
+            <img src="/logo-helenico-advisory.webp" alt="Helenico Advisory" title="Logo Helenico Advisory | Audit Statutar" className="h-16 -my-3 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center justify-self-center gap-8">

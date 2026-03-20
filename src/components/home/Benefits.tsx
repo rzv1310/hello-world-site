@@ -12,6 +12,11 @@ const Benefits = () => {
             <p className="text-lg text-white/80 mb-8">
               Obții liniște totală și claritate cu un audit statutar complet în 21 de zile, realizat conform standardelor ISA și legislației în vigoare.
             </p>
+            <div className="hidden lg:block">
+              <Link to="/contact" className="inline-block bg-white text-brand-navy font-semibold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors text-lg">
+                Solicită o conversație fără obligații înainte să iei o decizie
+              </Link>
+            </div>
           </div>
           <div className="grid gap-4">
             {benefits.map((benefit, i) => (
@@ -22,7 +27,7 @@ const Benefits = () => {
             ))}
           </div>
         </div>
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center lg:hidden">
           <Link to="/contact" className="inline-block bg-white text-brand-navy font-semibold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors text-lg">
             Solicită o conversație fără obligații înainte să iei o decizie
           </Link>
