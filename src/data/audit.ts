@@ -50,7 +50,7 @@ export const benefits: string[] = [
   "Încredere sporită pentru autorități și parteneri externi",
   "Fără haos administrativ, doar structură, ritm și coordonare",
   "Vizibilitate mai bună asupra riscurilor financiare",
-  "Fundament mai bun pentru decizii de management"
+  "Mai puțin stres, mai mult control și fără să blochezi activitatea companiei"
 ];
 
 export const documentCategories: DocumentCategory[] = [
