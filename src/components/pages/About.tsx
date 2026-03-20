@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import aspaasLogo from '@/assets/sigla-aspaas.webp';
-import cafrLogo from '@/assets/cafr-sigla.webp';
 import SEO from '@/components/common/SEO';
 
 const About = () => {
@@ -40,8 +38,8 @@ const About = () => {
                 Suntem membri ai principalelor organisme profesionale din România, garantând respectarea celor mai înalte standarde de etică și calitate în audit și consultanță.
               </p>
               <div className="flex gap-4 items-center">
-                <img src={aspaasLogo} alt="Autoritatea pentru Supravegherea Publică a Activității de Audit Statutar (ASPAAS)" className="h-16 w-auto object-contain" loading="lazy" />
-                <img src={cafrLogo} alt="Camera Auditorilor Financiari din România (CAFR)" className="h-16 w-auto object-contain" loading="lazy" />
+                <img src="/sigla-aspaas.webp" alt="Autoritatea pentru Supravegherea Publică a Activității de Audit Statutar (ASPAAS)" className="h-16 w-auto object-contain" loading="lazy" />
+                <img src="/cafr-sigla.webp" alt="Camera Auditorilor Financiari din România (CAFR)" className="h-16 w-auto object-contain" loading="lazy" />
               </div>
             </div>
 
