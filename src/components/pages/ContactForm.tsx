@@ -122,7 +122,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <div className="text-sm text-white/60 mb-1">Sună-ne direct</div>
-                  <a href="tel:0745300600" className="text-xl font-medium hover:text-brand-gold transition-colors">0745 300 600</a>
+                  <a href="tel:+40759900800" className="text-xl font-medium hover:text-brand-gold transition-colors">+40 759 900 800</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">

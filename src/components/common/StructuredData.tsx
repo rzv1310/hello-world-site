@@ -39,7 +39,7 @@ export const buildOrganizationSchema = () => ({
     contentUrl: LOGO_URL,
     caption: 'Helenico Advisory',
   },
-  telephone: '+40745300600',
+  telephone: '+40759900800',
   email: 'office@audit-statutar.ro',
   address,
   geo,
@@ -59,7 +59,7 @@ export const buildOrganizationSchema = () => ({
     {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      telephone: '+40745300600',
+      telephone: '+40759900800',
       email: 'office@audit-statutar.ro',
       availableLanguage: 'ro-RO',
       areaServed: 'RO',

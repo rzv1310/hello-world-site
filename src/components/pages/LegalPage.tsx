@@ -6,11 +6,11 @@ import type { LegalPageContent } from '@/types';
 const SITE_NAME = 'audit-statutar.ro';
 const COMPANY_NAME = 'Helenico Advisory';
 const CONTACT_EMAIL = 'office@audit-statutar.ro';
-const CONTACT_PHONE = '+40 745 300 600';
+const CONTACT_PHONE = '+40 759 900 800';
 const LINK_CLASS = 'text-brand-gold hover:underline font-medium';
 
 function renderParagraphWithSiteLinks(text: string) {
-  const pattern = /(audit-statutar\.ro|Helenico Advisory|office@audit-statutar\.ro|\+40 745 300 600)/g;
+  const pattern = /(audit-statutar\.ro|Helenico Advisory|office@audit-statutar\.ro|\+40 759 900 800)/g;
   const parts = text.split(pattern);
 
   return parts.map((part, index) => {
@@ -40,7 +40,7 @@ function renderParagraphWithSiteLinks(text: string) {
 
     if (part === CONTACT_PHONE) {
       return (
-        <a key={`phone-link-${index}`} href="tel:+40745300600" className={LINK_CLASS}>
+        <a key={`phone-link-${index}`} href="tel:+40759900800" className={LINK_CLASS}>
           {CONTACT_PHONE}
         </a>
       );

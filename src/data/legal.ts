@@ -54,7 +54,7 @@ export const legalPages: LegalPageContent[] = [
       {
         title: 'Operatorul datelor',
         paragraphs: [
-          'Pentru solicitările transmise prin acest site, operatorul datelor este Helenico Advisory. Ne puteți contacta la office@audit-statutar.ro sau telefonic la +40 745 300 600 pentru întrebări privind confidențialitatea datelor.',
+          'Pentru solicitările transmise prin acest site, operatorul datelor este Helenico Advisory. Ne puteți contacta la office@audit-statutar.ro sau telefonic la +40 759 900 800 pentru întrebări privind confidențialitatea datelor.',
         ],
       },
       {

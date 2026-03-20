@@ -18,7 +18,7 @@ const Footer = () => {
             <h2 className="text-sm sm:text-lg font-semibold mb-2 whitespace-nowrap"><Link to="/" className="hover:text-brand-gold transition-colors">HELENICO ADVISORY | AUDIT STATUTAR</Link></h2>
             <ul className="space-y-1 text-sm text-white/60">
               <li><a href="https://maps.app.goo.gl/FAFrwd6MW9pisSMi9" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Intrarea Horbotei 12, 030467 București</a></li>
-              <li><a href="tel:0745300600" className="hover:text-brand-gold transition-colors">0745 300 600</a></li>
+              <li><a href="tel:+40759900800" className="hover:text-brand-gold transition-colors">+40 759 900 800</a></li>
               <li><a href="mailto:office@audit-statutar.ro" className="hover:text-brand-gold transition-colors">office@audit-statutar.ro</a></li>
               <li className="pt-1">Luni - Sâmbătă: 09:00 - 19:00</li>
               <li>Duminică: Închis</li>
@@ -41,7 +41,7 @@ const Footer = () => {
             <h3 className="font-medium mb-6 text-lg">Partener / Auditor financiar</h3>
             <ul className="space-y-3 text-sm text-white/60">
               <li>Elena Iliuță</li>
-              <li><a href="tel:0745300600" className="hover:text-brand-gold transition-colors">0745 300 600</a></li>
+              <li><a href="tel:+40759900800" className="hover:text-brand-gold transition-colors">+40 759 900 800</a></li>
             </ul>
           </div>
         </div>
