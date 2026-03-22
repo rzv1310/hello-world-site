@@ -236,7 +236,7 @@ export default function ScrollVideoHero({
             src={fallbackSrc}
             alt={fallbackAlt}
             title={fallbackTitle}
-            fetchpriority="high"
+            fetchPriority="high"
             className={`h-full w-full object-cover ${
               isReady && !hasError ? 'opacity-0' : 'opacity-100'
             }`}
