@@ -24,9 +24,7 @@ const Footer = () => {
               <li>Duminică: Închis</li>
             </ul>
             <div className="mt-4 rounded-lg overflow-hidden">
-              <a href="https://maps.app.goo.gl/w1w7aW4G3xbhSri66" target="_blank" rel="noopener noreferrer">
-                <img src="/images/google-maps.webp" alt="Locația Helenico Advisory pe Google Maps" className="rounded-lg w-full h-auto hover:opacity-90 transition-opacity" loading="lazy" />
-              </a>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.8316227754763!2d26.160541111508138!3d44.4333735209552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1feb5606f19cd%3A0xd44ed50793355!2sAnsambul%20Rezidential%20Noor%2C%20Intrarea%20Horbotei%2012%2C%20077085%20Bucure%C8%99ti!5e1!3m2!1sro!2sro!4v1773855486507!5m2!1sro!2sro" width="100%" height="180" style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg" title="Locația Helenico Advisory pe Google Maps"></iframe>
             </div>
           </div>
 
