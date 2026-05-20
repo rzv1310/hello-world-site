@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
@@ -24,7 +24,7 @@ const Loading = () => (
 
 export default function App() {
   return (
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <>
       <ScrollToTop />
       <div className="relative min-h-screen bg-brand-beige selection:bg-brand-gold selection:text-white">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-navy focus:text-white focus:rounded focus:text-sm focus:font-medium">Salt la conținut</a>
@@ -50,6 +50,6 @@ export default function App() {
         <WhatsAppButton />
         <ConsentNotice />
       </div>
-    </BrowserRouter>
+    </>
   );
 }

@@ -40,10 +40,9 @@ const HeroContent = () => (
 
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return window.matchMedia(MOBILE_QUERY).matches;
-  });
+  // Always start `false` so the server render and the client's first render
+  // match; the real viewport size is detected after hydration in the effect.
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(MOBILE_QUERY);

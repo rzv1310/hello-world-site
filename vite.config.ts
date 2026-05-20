@@ -6,10 +6,17 @@ import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
 function preloadFonts() {
+  let isSsrBuild = false;
   return {
     name: "preload-fonts",
     enforce: "post" as const,
+    configResolved(config) {
+      isSsrBuild = !!config.build.ssr;
+    },
     closeBundle() {
+      // The SSR build emits no index.html — skip so we don't append
+      // duplicate font preloads to the client build's dist/index.html.
+      if (isSsrBuild) return;
       const distDir = path.resolve(__dirname, "dist");
       const htmlPath = path.join(distDir, "index.html");
       if (!fs.existsSync(htmlPath)) return;
